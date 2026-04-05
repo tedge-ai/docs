@@ -1,5 +1,5 @@
 export default {
-  index: 'Overview',
+  overview: 'Overview',
   strategies: 'Strategies',
   'ai-indicators': 'AI Indicators',
   'ai-coach': 'AI Coach',

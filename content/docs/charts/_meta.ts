@@ -1,5 +1,5 @@
 export default {
-  index: 'Overview',
+  overview: 'Overview',
   timeframes: 'Timeframes',
   drawings: 'Drawing Tools',
   indicators: 'Indicators',

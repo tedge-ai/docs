@@ -1,5 +1,5 @@
 export default {
-  index: 'Overview',
+  overview: 'Overview',
   installation: 'Installation',
   connection: 'Connecting',
   troubleshooting: 'Troubleshooting',

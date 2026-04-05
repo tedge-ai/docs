@@ -1,5 +1,5 @@
 export default {
-  index: 'Overview',
+  overview: 'Overview',
   'demo-mode': 'Demo Mode',
   'open-trade': 'Opening a Trade',
   'manage-positions': 'Managing Positions',
