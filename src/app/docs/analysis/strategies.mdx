@@ -1,0 +1,59 @@
+# Strategies
+
+## Available Strategies
+
+| Strategy | Category | Description |
+|----------|----------|-------------|
+| **Smart Money Concepts** | Structure | Order blocks, FVG, liquidity sweeps, BOS/CHoCH |
+| **Supply & Demand** | Structure | Pure S&D zones, rally-base-drop, imbalances |
+| **Breakout Retest** | Structure | Key level breakouts, wait for retest to enter |
+| **Range Trading** | Mean Reversion | Trade range boundaries with BB and RSI confirmation |
+| **Trend Pullback** | Trend | Enter on pullbacks within an established trend |
+| **Key Levels** | Structure | Major S/R, psychological levels, pivots |
+
+## Smart Money Concepts (SMC)
+
+The default strategy. The AI identifies:
+- **Order Blocks** — Last opposing candle before an impulsive move
+- **Fair Value Gaps** — Imbalances between 3 candles
+- **Break of Structure** — Swing high/low breakout confirming trend
+- **Liquidity pools** — Accumulated stops beyond obvious levels
+
+## Supply & Demand
+
+Pure price action approach:
+- **Rally-Base-Rally / Drop-Base-Drop** — Continuation zones
+- **Rally-Base-Drop / Drop-Base-Rally** — Reversal zones
+- Fresh (untested) zones are prioritized
+
+## Breakout Retest
+
+Waits for a clean break of a key level, then enters on the retest:
+- Identifies the range and its boundaries
+- Confirms the breakout with momentum
+- Sets entry at the retested level
+
+## Range Trading
+
+Exploits range-bound markets:
+- Identifies upper and lower boundaries
+- Uses Bollinger Bands and RSI for confirmation
+- Buys at support + oversold, sells at resistance + overbought
+
+## Trend Pullback
+
+Follows the trend by entering on retracements:
+- Confirms trend with EMA alignment (20/50/200)
+- Enters on pullbacks to dynamic support (EMA levels)
+- Higher-timeframe trend must be clear
+
+## Key Levels
+
+Minimalist approach focused on the most important levels:
+- Psychological levels (round numbers)
+- Swing highs/lows tested multiple times
+- Daily/weekly highs and lows
+
+## Custom Strategy (Premium)
+
+Write your own strategy prompt in the "Custom Strategy" option. Describe your rules and the AI will adapt its analysis accordingly.

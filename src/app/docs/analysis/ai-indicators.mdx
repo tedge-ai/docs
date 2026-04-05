@@ -1,0 +1,30 @@
+# AI Indicators
+
+## Adaptive Indicators
+
+When you run an analysis, the AI agent configures indicators specifically for the symbol being analyzed. The indicators adapt based on:
+
+- **Symbol characteristics** — Volatility, typical ranges, market type
+- **Timeframe groups** — Different indicators for LTF vs HTF
+- **Strategy** — Each strategy may emphasize different indicators
+
+## How It Works
+
+The agent calls `set_indicators` during analysis, grouping indicators by timeframe range:
+
+- **LTF** (M1–M15) — Fast EMAs for scalp/intraday entries (e.g., EMA 9, 21)
+- **MTF** (M30–H1) — Medium EMAs for swing setups (e.g., EMA 21, 50)
+- **HTF** (H4+) — Slow EMAs for trend context (e.g., EMA 50, 200)
+
+## Automatic Switching
+
+When you change timeframes on the chart, the indicators automatically update to match the agent's recommendations for that TF range. No manual configuration needed.
+
+## Example: BTC/USD
+
+The agent might configure:
+- **M5/M15**: EMA 9 (fast support) + EMA 21 (trend filter) + EMA 50 (major support)
+- **H1**: EMA 21 (dynamic support) + EMA 50 (trend filter) + EMA 200 (macro trend)
+- **H4**: EMA 50 (trend pivot) + EMA 200 (macro resistance)
+
+Each indicator includes a reason explaining its role, visible in the analysis summary.

@@ -1,0 +1,38 @@
+# Indicators
+
+## Overview
+
+Access indicators from the settings icon in the topbar.
+
+## Available Indicators
+
+### Overlay (on chart)
+| Indicator | Parameters |
+|-----------|-----------|
+| **EMA** (Exponential Moving Average) | Period (2-500), color, line width |
+| **SMA** (Simple Moving Average) | Period (2-500), color, line width |
+| **Bollinger Bands** | Period, color |
+
+### Oscillators (sub-pane)
+| Indicator | Parameters |
+|-----------|-----------|
+| **RSI** (Relative Strength Index) | Period, color, pane height |
+| **ADX** (Average Directional Index) | Period, color, pane height |
+
+## AI-Configured Indicators
+
+When you run an AI analysis, the agent automatically recommends indicators adapted to the symbol and grouped by timeframe range:
+
+- **LTF** (M1-M15) — Typically faster EMAs (9, 21)
+- **MTF** (M30-H1) — Medium EMAs (21, 50)
+- **HTF** (H4+) — Slower EMAs (50, 200)
+
+When you switch timeframes, indicators automatically adjust to match the agent's recommendations.
+
+## Manual Configuration
+
+Click the indicators icon in the topbar to:
+- Toggle indicators on/off (checkbox)
+- Adjust period, color, and line width
+- Add new EMA/SMA
+- Reset to defaults
