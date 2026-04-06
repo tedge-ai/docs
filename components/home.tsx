@@ -23,7 +23,7 @@ const SECTIONS = [
     title: 'AI Analysis',
     description: '6 trading strategies, adaptive indicators, and AI-powered market structure analysis.',
     href: '/docs/analysis/overview',
-    icon: '🧠',
+    icon: '🔬',
     color: 'from-purple-500/10 to-purple-500/5',
     border: 'hover:border-purple-500/30',
   },
