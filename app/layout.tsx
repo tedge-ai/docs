@@ -20,10 +20,10 @@ const jetbrains = JetBrains_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "Tedge Docs — Trading Intelligence Documentation",
-    template: "%s — Tedge Docs",
+    default: "tedge.ai docs — Trading Intelligence Documentation",
+    template: "%s — tedge.ai docs",
   },
-  description: "Documentation for the Tedge AI trading platform",
+  description: "Documentation for the tedge.ai trading platform",
 };
 
 export default async function RootLayout({
@@ -46,10 +46,11 @@ export default async function RootLayout({
           navbar={
             <Navbar
               logo={
-                <span className="font-semibold">
-                  Tedge<span className="text-amber-500">.ai</span>{" "}
+                <span className="flex items-center gap-2 font-semibold">
+                  <img src="/icon.svg" alt="tedge" width={22} height={22} className="rounded" />
+                  tedge<span className="text-amber-500">.ai</span>{" "}
                   <span className="text-sm font-normal text-gray-500">
-                    Docs
+                    docs
                   </span>
                 </span>
               }
@@ -61,7 +62,7 @@ export default async function RootLayout({
           footer={
             <Footer>
               <span>
-                {new Date().getFullYear()} © Tedge AI — Trading Intelligence
+                {new Date().getFullYear()} © tedge.ai — Trading Intelligence
               </span>
             </Footer>
           }

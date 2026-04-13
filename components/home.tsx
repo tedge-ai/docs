@@ -67,14 +67,14 @@ export function DocsHome() {
       {/* Hero */}
       <div className="text-center mb-16">
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-500/20 mb-6">
-          <span className="text-amber-500 text-sm font-mono font-semibold">Tedge.ai</span>
+          <span className="text-amber-500 text-sm font-mono font-semibold">tedge.ai</span>
           <span className="text-neutral-400 text-sm">Documentation</span>
         </div>
         <h1 className="text-4xl md:text-5xl font-bold tracking-tight mb-4">
           Learn to trade smarter
         </h1>
         <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-          Everything you need to get the most out of the Tedge AI trading platform.
+          Everything you need to get the most out of the tedge.ai trading platform.
           From first steps to advanced strategies.
         </p>
       </div>
