@@ -1,39 +1,63 @@
 # AI Coach
 
-## Post-Trade Review
+The AI Coach is your personal trading reviewer. Every time you close a trade — whether by hitting your stop loss, reaching a take profit target, or closing manually — the Coach analyzes your execution and provides structured feedback. The goal is not to judge whether the trade won or lost, but to evaluate how well you followed your plan and managed the position.
 
-Every time you close a trade (SL, TP, or manual), Edge AI Coach automatically analyzes your trade and provides:
+## When the Coach Activates
+
+The AI Coach generates a review automatically each time a trade is closed. This applies to both demo and live trades. The review appears within seconds of the closure and is permanently attached to the trade record in your history.
+
+For analyses, the Coach also runs a **post-mortem review at T+24h** — twenty-four hours after an analysis was created, the system evaluates how the identified zones and setups performed. Did price reach the entry zone? Did the setup play out? Were the zones respected? This post-mortem is available on the [Analysis Replay](/docs/analysis/replay) page.
+
+## What the Coach Evaluates
+
+Each post-trade review covers three dimensions:
 
 ### Entry Quality
-Was the entry well-timed? Was it at a significant level? Was there confluence with the analysis zones?
+
+The Coach assesses whether your entry was well-timed and well-placed. It considers the proximity of your entry to the analysis zones, whether you entered at a significant level with confluence, and whether the timing aligned with the structural context the AI had identified.
 
 ### Position Management
-Was the SL/TP placement appropriate? Was the duration reasonable? Did you exit at the right time?
+
+This section evaluates how you managed the trade after entry. The Coach looks at your stop loss and take profit placement — were they at logical structural levels? Did you hold the position for an appropriate duration, or did you exit prematurely? If you used partial closes at TP1/TP2, were the levels well-chosen?
 
 ### Overall Assessment
-Global synthesis with actionable advice to improve.
 
-### Score (1-10)
+A global synthesis that ties everything together. The Coach highlights what you did well, what could be improved, and provides one or two specific, actionable takeaways to apply to your next trade.
 
-| Score | Rating | Description |
-|-------|--------|-------------|
-| 1-3 | Poor | Bad entry, poor management, significant loss |
-| 4-5 | Mediocre | Notable mistakes in execution |
-| 6-7 | Good | Reasonable execution, room for improvement |
-| 8-9 | Very Good | Precise entry, good management, plan respected |
-| 10 | Excellent | Exemplary execution |
 
-**Important**: A losing trade can score well if the execution was good. A winning trade can score poorly if it was based on luck.
+## Score (1-10)
+
+Every review concludes with a numerical score:
+
+| Score | Rating | What It Means |
+|-------|--------|---------------|
+| 1-3 | Poor | Significant execution mistakes, ignored the plan, or took excessive risk |
+| 4-5 | Below Average | Notable issues in entry timing or position management |
+| 6-7 | Good | Reasonable execution with room for improvement |
+| 8-9 | Very Good | Precise entry, disciplined management, plan followed closely |
+| 10 | Excellent | Exemplary execution across all dimensions |
+
+> **Tip:** A losing trade can receive a high score if the execution was disciplined and followed the plan. Conversely, a winning trade can score poorly if it relied on luck rather than sound analysis. The Coach evaluates process, not outcome.
 
 ## Viewing Reviews
 
-- In the **Trades** panel, closed trades show the AI score in the last column
-- Click on any closed trade row to expand the full AI Coach review
-- The review appears with entry quality, position management, and overall analysis
+You can access AI Coach reviews from several places in the platform:
+
+- **Trades panel** — In the positions list, closed trades display the AI score in the rightmost column. Click on any closed trade row to expand and read the full review.
+- **Trade History page** — The dedicated trades page shows all closed trades with their scores. Expandable rows reveal the complete Coach review.
+- **Trade Journal** — The journal panel on the analyses page includes Coach reviews alongside your personal notes.
+
 
 ## Dashboard Synthesis (Advanced+)
 
-The Dashboard integrates AI Coach data into the weekly synthesis:
-- Average score trends
-- Recurring patterns and mistakes
-- Improvement suggestions based on your history
+On the Advanced and Premium tiers, the AI Coach integrates into a broader performance dashboard that aggregates your reviews over time:
+
+- **Average score trends** — Track how your execution quality evolves week over week.
+- **Recurring patterns** — The system identifies repeated mistakes (e.g., consistently entering too early or setting stops too tight) and highlights them.
+- **Improvement suggestions** — Personalized advice based on your trading history, not generic tips.
+
+## Post-Mortem on Analyses (T+24h)
+
+Twenty-four hours after an analysis is created, the system runs an automated post-mortem that evaluates the quality of the zones and setups. For each zone, it scores whether price reached the area, how it reacted, and whether the proposed trade would have been profitable. These post-mortem results are visible on the [Analysis Replay](/docs/analysis/replay) page, overlaid on the historical chart.
+
+> **Warning:** The AI Coach requires that the trade was linked to an analysis to provide the most detailed feedback. Trades opened without a preceding analysis will still receive a review, but it may be less specific about zone alignment and setup quality.

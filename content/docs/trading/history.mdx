@@ -1,28 +1,60 @@
 # Trade History
 
-## Viewing History
+The Trades page provides a comprehensive view of all your closed trades, complete with performance statistics, an equity curve, and detailed AI Coach reviews accessible from every trade row.
 
-Navigate to the **Trades** page for full history, or expand the **Historique** section in the Trades panel.
+## The Trades Table
 
-## Columns
+Navigate to the **Trades** page from the main navigation. The table displays all closed trades with the following columns:
 
 | Column | Description |
 |--------|-------------|
-| Date | When the trade was opened |
-| Symbol | Instrument traded |
-| Direction | BUY or SELL |
-| Lots | Position size |
-| Entry / Exit | Prices |
-| P&L | Profit or loss in dollars |
-| R:R | Risk-to-reward ratio achieved |
-| MFE | Best unrealized P&L during the trade |
-| MAE | Worst unrealized P&L during the trade |
-| Duration | How long the position was held |
-| AI Score | AI Coach rating (1-10) |
+| **Date** | When the trade was opened |
+| **Symbol** | The instrument traded |
+| **Direction** | BUY or SELL |
+| **Lots** | Position size |
+| **Entry / Exit** | Entry and exit prices |
+| **P&L** | Realized profit or loss in dollars, color-coded green or red |
+| **R:R** | The risk-to-reward ratio actually achieved |
+| **MFE** | Maximum Favorable Excursion — the best unrealized P&L during the trade |
+| **MAE** | Maximum Adverse Excursion — the worst unrealized P&L during the trade |
+| **Duration** | How long the position was held |
+| **AI Score** | The AI Coach rating from 1 to 10 |
 
-## Statistics
 
-The Trades page includes performance statistics:
-- Win rate, average P&L, total P&L
-- Trading calendar with daily results
-- Equity curve
+## Expandable Rows
+
+Click on any trade row to expand it and reveal the full AI Coach review. The expanded section includes:
+
+- **Entry Quality** — Assessment of your entry timing and level.
+- **Position Management** — Evaluation of your SL/TP placement and trade duration.
+- **Overall Assessment** — Synthesis with specific, actionable takeaways.
+- **Score** — The numerical rating with a brief explanation.
+- **Notes** — Your personal notes about the trade, if any were added from the Trade Journal.
+
+This detail level turns the trade history into a learning tool — you can review past trades, understand what went well or poorly, and track your improvement over time.
+
+## Performance Statistics
+
+Above the trade table, the Trades page displays aggregate statistics for the selected period:
+
+- **Win rate** — Percentage of trades that closed in profit.
+- **Average P&L** — Mean profit or loss per trade.
+- **Total P&L** — Cumulative profit or loss for the period.
+- **Average R:R** — Mean risk-to-reward ratio across winning trades.
+- **Average AI Score** — Mean Coach score, indicating execution quality trends.
+- **Best / worst trade** — The single most profitable and most costly trades in the period.
+
+> **Tip:** Pay attention to the gap between MFE and actual P&L on your winning trades. A large gap suggests you are leaving money on the table — the trade went further in your favor than your exit captured. Conversely, compare MAE to your SL distance to see how close your stop was to being hit.
+
+## Trading Calendar
+
+The calendar view shows daily P&L results in a monthly grid. Green days are profitable, red days are losing, and the shade intensity reflects the magnitude. This gives you a quick visual overview of your consistency and helps identify patterns — do you perform better on certain days of the week? Do losing streaks cluster around specific periods?
+
+
+## Equity Curve
+
+The equity curve charts your account balance over time, starting from your initial capital. The curve rises with winning trades and dips with losses, giving you a clear picture of your performance trajectory. A smooth, upward-sloping curve indicates consistent profitability, while sharp drawdowns highlight periods to study and learn from.
+
+## Filtering
+
+Use the filters at the top of the page to narrow the view by symbol, direction, date range, or minimum AI Score. This is useful for comparing performance across different instruments or strategies, or for focusing on trades that scored below a certain threshold to identify areas for improvement.

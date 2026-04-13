@@ -1,22 +1,57 @@
 # Troubleshooting
 
-## Common Issues
+This page covers the most common issues users encounter with EdgeBridge and how to resolve them. If your issue is not listed here, reach out to support from your profile page.
 
-### EdgeBridge won't start
-- Ensure MetaTrader 5 is installed and running
-- Check that no other instance of EdgeBridge is already running
-- Try running as Administrator
+## EdgeBridge Won't Start
 
-### Connection keeps dropping
-- Check your internet connection
-- Ensure your firewall allows outbound WebSocket connections
-- EdgeBridge reconnects automatically — brief drops are normal
+**MetaTrader 5 is not running.** EdgeBridge requires MT5 to be running on the same machine. Launch MT5 first, wait for it to log in to your broker account, then start EdgeBridge.
 
-### Symbols not loading
-- Make sure your MT5 terminal is logged in to a broker account
-- Some symbols may need to be enabled in MT5's Market Watch
+**Another instance is already running.** Check your system tray for an existing EdgeBridge icon. Only one instance can run at a time. If the icon is there but unresponsive, right-click it and select Exit, then restart EdgeBridge.
 
-### Trades not executing
-- Verify your MT5 account has trading permissions (not read-only/investor)
-- Check that the symbol is available for trading on your broker
-- Ensure sufficient margin in your account
+**Run as Administrator.** In some environments, EdgeBridge needs elevated permissions to communicate with MT5. Right-click the EdgeBridge shortcut and select "Run as administrator."
+
+**Windows Defender or antivirus blocking.** Some security software may flag EdgeBridge because it communicates with an external server. Add EdgeBridge to your antivirus whitelist or create an exception for the installation folder.
+
+> **Tip:** If EdgeBridge was working previously and suddenly stops, check whether a Windows update or antivirus update changed your security settings.
+
+## Connection Keeps Dropping
+
+**Unstable internet connection.** EdgeBridge maintains a WebSocket connection to the tedge.ai servers. If your internet drops frequently, the bridge will disconnect and reconnect each time. Test your connection stability with a tool like ping or speedtest.
+
+**Firewall blocking WebSocket connections.** Ensure your firewall allows outbound connections on ports 443 (HTTPS/WSS). EdgeBridge uses secure WebSocket connections, which travel over the same port as regular HTTPS traffic. Most firewalls allow this by default, but corporate or custom firewall rules may block it.
+
+**VPN interference.** Some VPNs can interfere with WebSocket connections. If you use a VPN, try temporarily disabling it to see if the connection stabilizes. If the VPN is required, ensure it does not block or throttle WebSocket traffic.
+
+**EdgeBridge reconnects automatically** after any disconnection. Brief drops (a few seconds) are normal and usually resolve without intervention. The platform falls back to Twelve Data pricing during disconnections.
+
+## Symbols Not Loading
+
+**MT5 is not logged in.** EdgeBridge can only access symbols when MT5 is connected to a broker account. Check that MT5 shows "Connected" in its status bar.
+
+**Symbols not in Market Watch.** Some brokers do not include all symbols in the default Market Watch list. Open MT5, right-click in the Market Watch panel, and select "Show All" to enable the full symbol list. Then restart EdgeBridge.
+
+**Broker-specific symbols.** Some symbols may have broker-specific prefixes or suffixes (e.g., "EURUSDm" instead of "EURUSD"). The platform maps common symbols automatically, but unusual naming may require manual selection.
+
+## Trades Not Executing
+
+**Investor (read-only) account.** If your MT5 account is logged in with the investor password, you have read-only access — price data works, but trade execution is blocked. Log in to MT5 with your master password to enable trading.
+
+**Insufficient margin.** Check that your MT5 account has enough free margin for the trade size you are attempting. The error message in the trade execution dialog will indicate if margin is the issue.
+
+**Symbol not tradeable.** Some symbols in your broker's list may be view-only (e.g., index symbols that cannot be traded directly). Check with your broker if a specific symbol should be available for trading.
+
+**Market closed.** Most forex and index markets have specific trading hours. If you try to execute during a market closure, the trade will be rejected. Crypto markets are typically available 24/7.
+
+## Bridge Logs
+
+EdgeBridge maintains log files that can help diagnose issues:
+
+1. Right-click the EdgeBridge system tray icon.
+2. Select **Open Logs**.
+3. The log folder opens in Windows Explorer.
+4. The most recent log file contains detailed information about connection attempts, errors, and data flow.
+
+When contacting support, include the contents of the latest log file — it significantly speeds up troubleshooting.
+
+
+> **Warning:** Log files may contain your broker account number and symbol data. If you share logs publicly (e.g., in a forum), redact any sensitive information first.

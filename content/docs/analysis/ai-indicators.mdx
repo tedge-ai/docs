@@ -1,30 +1,58 @@
 # AI Indicators
 
-## Adaptive Indicators
+When the AI agent runs an analysis, it does more than identify zones and opportunities — it also configures a set of technical indicators specifically tailored to the symbol being analyzed. This feature ensures that the indicators on your chart are always relevant to the current market context rather than being a static, one-size-fits-all setup.
 
-When you run an analysis, the AI agent configures indicators specifically for the symbol being analyzed. The indicators adapt based on:
+## How the Agent Configures Indicators
 
-- **Symbol characteristics** — Volatility, typical ranges, market type
-- **Timeframe groups** — Different indicators for LTF vs HTF
-- **Strategy** — Each strategy may emphasize different indicators
+During the analysis process, the agent calls an internal tool called `set_indicators`. This tool accepts a grouped configuration that specifies which indicators to display on each timeframe range. The agent decides which indicators to recommend based on three factors:
 
-## How It Works
+**Symbol characteristics** — Volatile instruments like BTC/USD might get wider EMA periods to smooth out noise, while a stable forex pair like EUR/USD might use tighter periods for more responsive signals.
 
-The agent calls `set_indicators` during analysis, grouping indicators by timeframe range:
+**Timeframe groups** — The agent groups the 21 available timeframes into three ranges and configures different indicators for each. This means switching from an H4 chart to an M5 chart automatically changes your indicator setup without any manual intervention.
 
-- **LTF** (M1–M15) — Fast EMAs for scalp/intraday entries (e.g., EMA 9, 21)
-- **MTF** (M30–H1) — Medium EMAs for swing setups (e.g., EMA 21, 50)
-- **HTF** (H4+) — Slow EMAs for trend context (e.g., EMA 50, 200)
+**Strategy context** — The selected analysis strategy influences indicator choices. A Trend Pullback analysis might emphasize EMA alignment (20/50/200), while a Range Trading analysis might prioritize Bollinger Bands for volatility measurement.
+
+## Timeframe Groups
+
+| Group | Timeframes | Typical Focus |
+|-------|-----------|---------------|
+| **LTF (Low Timeframe)** | M1 – M15 | Fast indicators for precise entries. Common: EMA 9, EMA 21 |
+| **MTF (Mid Timeframe)** | M30 – H1 | Medium indicators for swing setups. Common: EMA 21, EMA 50 |
+| **HTF (High Timeframe)** | H4+ | Slow indicators for trend context. Common: EMA 50, EMA 200 |
 
 ## Automatic Switching
 
-When you change timeframes on the chart, the indicators automatically update to match the agent's recommendations for that TF range. No manual configuration needed.
+When you change the timeframe on your chart, the indicators automatically update to match the agent's recommendations for the new timeframe range. This switching is instant and seamless — you do not need to manually reconfigure anything when moving between timeframes.
 
-## Example: BTC/USD
+For example, if you are on the H1 chart and switch to M5, your EMA 50 and EMA 200 might become EMA 9 and EMA 21, because the agent determined that those faster periods are more relevant for low-timeframe analysis on that particular symbol.
 
-The agent might configure:
-- **M5/M15**: EMA 9 (fast support) + EMA 21 (trend filter) + EMA 50 (major support)
-- **H1**: EMA 21 (dynamic support) + EMA 50 (trend filter) + EMA 200 (macro trend)
-- **H4**: EMA 50 (trend pivot) + EMA 200 (macro resistance)
 
-Each indicator includes a reason explaining its role, visible in the analysis summary.
+## Example: BTC/USD Analysis
+
+After running an SMC analysis on BTC/USD, the agent might configure the following indicators:
+
+**M5 / M15 (LTF):**
+- EMA 9 — Fast dynamic support for scalp entries
+- EMA 21 — Short-term trend filter
+- EMA 50 — Key support/resistance level
+
+**H1 (MTF):**
+- EMA 21 — Dynamic support in the intermediate trend
+- EMA 50 — Trend direction filter
+- EMA 200 — Macro trend reference
+
+**H4 / D1 (HTF):**
+- EMA 50 — Trend pivot level
+- EMA 200 — Major macro support/resistance
+
+Each indicator in the configuration includes a plain-language reason explaining why the agent chose it, such as "EMA 21 acts as dynamic support during the current bullish structure on M15." These reasons are visible in the analysis summary panel.
+
+## Indicator Reasons
+
+After an analysis completes, expand the indicator section in the analysis panel to see the full list of configured indicators with their reasons. This transparency helps you understand not just what the agent configured, but why — and it teaches you how to think about indicator selection for different market contexts.
+
+> **Tip:** Pay attention to the indicator reasons across multiple analyses. Over time, you will start to notice patterns in how the agent selects periods for different symbols and conditions, which builds your own intuition about indicator usage.
+
+## Overriding AI Indicators
+
+You can always manually adjust or override the AI-configured indicators from the indicators panel in the top bar. However, keep in mind that manual changes are separate from the AI configuration — running a new analysis will reset the indicators to the agent's new recommendations.

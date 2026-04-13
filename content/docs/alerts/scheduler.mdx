@@ -1,25 +1,45 @@
 # Scheduler
 
-## Automated Analyses
-
-Schedule AI analyses to run automatically on your favorite symbols.
-
-## Setup
-
-1. Open the **Scheduler** panel (available in Advanced+ plans)
-2. Click **+ Add Schedule**
-3. Select the symbol
-4. Choose the frequency (e.g., every 4 hours, daily at market open)
-5. Save
+The analysis scheduler automates your AI analysis workflow. Instead of manually running analyses each morning, configure the scheduler to run them at specific times and days, and receive notifications when new opportunities are found.
 
 ## How It Works
 
-- The scheduler runs analyses in the background
-- Results are saved and available in the analysis panel
-- Push/Telegram notifications sent when new opportunities are found
-- Each scheduled analysis consumes AI credits
+The scheduler runs AI analyses in the background on your behalf. When a scheduled analysis completes, the results are saved to your Analyses page and a notification is sent through your active channels (portal, push, Telegram). If the analysis identifies trade opportunities, the notification includes a summary so you can decide whether to open the platform and act.
+
+This is particularly useful for traders who follow a set watchlist and want a fresh analysis at market open or at regular intervals throughout the session.
+
+
+## Setting Up a Schedule
+
+1. Open the **Scheduler** panel from the alerts section.
+2. Click **+ Add Schedule**.
+3. **Select the symbol** — choose from your watchlist or search for any available instrument.
+4. **Choose a strategy** — select which analysis strategy to use (SMC, Supply & Demand, etc.).
+5. **Set the days** — check the days of the week the analysis should run (e.g., Monday through Friday for forex, every day for crypto).
+6. **Set the time** — pick the time of day for the analysis to execute. Times are displayed in your local timezone.
+7. **Save** the schedule.
+
+The schedule is now active and will run automatically at the configured time.
+
+
+## Timezone Handling
+
+All schedule times are displayed and configured in your local timezone (detected from your browser). The server converts this to UTC for execution, so your analyses run at the correct local time regardless of daylight saving changes.
+
+> **Tip:** For forex, schedule analyses 15-30 minutes after the London or New York session opens, when volatility has established the early session bias. For crypto, there is no session schedule, but many traders find value in running analyses at the start of the Asian and European sessions.
+
+## Managing Schedules
+
+Each schedule card in the panel shows the symbol, strategy, days, and time. You can:
+
+- **Edit** — Change the strategy, days, or time.
+- **Pause / Resume** — Temporarily disable a schedule without deleting it. Paused schedules do not run or consume credits.
+- **Delete** — Remove the schedule permanently.
+- **View last run** — See when the schedule last executed and whether opportunities were found.
 
 ## Slot Limits
+
+The number of active scheduler slots depends on your subscription:
 
 | Plan | Scheduler Slots |
 |------|----------------|
@@ -27,3 +47,19 @@ Schedule AI analyses to run automatically on your favorite symbols.
 | Basic | 2 |
 | Advanced | 10 |
 | Premium | Unlimited |
+
+Paused schedules count toward your slot limit.
+
+## Credit Consumption
+
+Each scheduled analysis consumes AI credits from your monthly allocation, just like a manual analysis (typically 0.30–0.70 credits depending on depth). Plan your schedules with your credit budget in mind.
+
+For example, a Basic plan with 15 credits and 2 daily schedules running Monday through Friday would consume roughly 20–28 credits per month from schedules alone — more than the included 15. Consider running schedules less frequently or upgrading to Advanced for more headroom.
+
+> **Warning:** The scheduler does not run if you have insufficient credits. If your credit balance is zero, scheduled analyses are skipped and you receive a notification informing you. Paused schedules do not consume credits.
+
+## Best Practices
+
+- Schedule analyses for times when you can actually review and act on the results within a reasonable window.
+- Use the strategy that matches the current market conditions for each symbol — SMC for trending markets, Range Trading for consolidating ones.
+- Review your scheduled analyses regularly on the Analyses page. The post-mortem results (T+24h) let you evaluate whether the scheduler's outputs are producing reliable setups.

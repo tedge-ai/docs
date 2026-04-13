@@ -1,16 +1,54 @@
 # Demo Mode
 
+Demo mode gives you a risk-free environment to test strategies, learn the platform, and practice your execution. Every tedge.ai account includes a virtual trading account that simulates real market conditions using live price data.
+
 ## Virtual Account
 
-Every user gets a demo account with $10,000 virtual balance. Trades are simulated using real market prices.
+Your demo account starts with a configurable virtual balance — the default is $10,000. This balance is entirely separate from any real trading account and carries no financial risk. Profits and losses from demo trades affect only the virtual balance.
 
-## How It Works
 
-- Trades execute at the current market price
-- P&L is calculated using real-time prices
-- SL and TP trigger automatically when price reaches the level
-- MFE (Maximum Favorable Excursion) and MAE (Maximum Adverse Excursion) are tracked
+## How Demo Trading Works
 
-## Resetting
+Demo trades behave like real trades in every way except that no actual orders are placed with a broker:
 
-Contact support to reset your demo balance to the initial amount.
+**Market execution** — When you open a demo trade, it executes at the current market price. The entry is recorded and the position begins tracking P&L in real time.
+
+**SL/TP tick engine** — A continuous monitoring engine watches the price feed against your stop loss and take profit levels. When the current price reaches your SL or TP, the trade is closed automatically at that level. This happens in real time as long as the platform is open.
+
+**MFE and MAE tracking** — Throughout the life of each demo trade, the platform records the Maximum Favorable Excursion (the best unrealized profit) and Maximum Adverse Excursion (the worst unrealized loss). These metrics feed into the AI Coach review to evaluate how well you managed the position.
+
+**AI Coach reviews** — Demo trades receive the same AI Coach analysis as live trades. Every closure triggers a post-trade review with entry quality assessment, position management evaluation, and a score out of 10.
+
+## Configurable Starting Capital
+
+You can set your virtual account balance to match your intended real trading capital. This makes the risk percentages and lot size recommendations meaningful — if you plan to trade a $5,000 live account, set your demo to $5,000 so the position sizing reflects your actual risk parameters.
+
+To change the starting capital, visit the demo account settings in your profile.
+
+## Resetting the Demo Account
+
+If you want a fresh start, use the **Reset** button in the demo account settings panel. This resets your virtual balance to the configured starting capital and clears all open positions. Your trade history is preserved for reference, but it is marked as belonging to a previous session.
+
+> **Tip:** Reset your demo periodically to simulate starting fresh. This helps you practice the discipline of building an account from a defined starting point, rather than trading with accumulated virtual profits.
+
+## When to Use Demo Mode
+
+Demo mode is valuable in several scenarios:
+
+- **Learning the platform** — Familiarize yourself with the execution dialog, position management, and AI analysis workflow without financial risk.
+- **Testing a new strategy** — Before committing real capital to a strategy, run it in demo for a few weeks to evaluate its performance.
+- **Practicing execution** — Work on your entry timing, SL placement, and partial close discipline in a risk-free environment.
+- **Evaluating AI analysis** — Use demo trades to test how well the AI's proposed setups perform in real market conditions.
+
+## Differences from Live Mode
+
+| Aspect | Demo | Live |
+|--------|------|------|
+| Price data | Real market prices | Real market prices |
+| Order execution | Simulated locally | Via MT5 broker |
+| SL/TP monitoring | Client-side tick engine | Server-side broker orders |
+| Slippage | None | Possible, depends on broker |
+| Spread | Approximated | Real broker spread |
+| AI Coach reviews | Full | Full |
+
+> **Warning:** Demo results may differ from live results due to slippage, spread variations, and execution delays that exist in real market conditions but are absent in the simulation.

@@ -1,21 +1,53 @@
 # MT5 Bridge
 
-EdgeBridge connects your MetaTrader 5 terminal to the tedge.ai platform for live data and trade execution.
+EdgeBridge is a lightweight desktop application that connects your MetaTrader 5 terminal to the tedge.ai web platform. It enables live price data, full symbol access from your broker, and real-time trade execution — all routed through a secure WebSocket tunnel that requires no port forwarding or network configuration.
 
-## What It Does
 
-- **Live prices** — Real-time bid/ask from your broker
-- **All symbols** — Access your broker's full symbol list
-- **Trade execution** — Open/close/modify positions from the web platform
-- **Position tracking** — Real-time P&L on your MT5 positions
+## What EdgeBridge Does
+
+### Live Price Data
+
+When EdgeBridge is connected, the platform receives real-time bid/ask prices directly from your MT5 broker. This provides the most accurate pricing available, with latency measured in milliseconds. The connection dot in the top bar turns green to indicate live data is active.
+
+### Full Symbol Access
+
+Your broker's complete symbol list becomes available in tedge.ai. Instead of being limited to the symbols provided by Twelve Data, you can chart and analyze any instrument your broker offers — including exotic forex pairs, CFDs, and broker-specific symbols.
+
+### Trade Execution
+
+In live mode, trades opened, modified, or closed on the tedge.ai platform are executed on your MT5 terminal in real time. This includes opening positions, modifying SL/TP levels, and closing trades. The web platform acts as a remote interface to your MT5 account.
+
+### Position Synchronization
+
+Open positions on your MT5 account are synchronized to the web platform, showing real-time P&L. If you open a trade directly in MT5, it appears in tedge.ai. If you modify or close it in tedge.ai, the change is reflected in MT5.
+
+## Architecture
+
+EdgeBridge runs as a Windows application on the same machine as your MT5 terminal. It communicates with MT5 through a local connection and establishes an outbound WebSocket tunnel to the tedge.ai servers.
+
+The connection is outbound only — EdgeBridge initiates the connection to tedge.ai, so no port forwarding, NAT configuration, or firewall rules are needed. Your MT5 terminal never exposes any ports to the internet.
+
+> **Tip:** Because the connection is outbound, EdgeBridge works behind corporate firewalls, NAT routers, and VPNs without any special configuration. As long as your machine can reach the internet, EdgeBridge can connect.
 
 ## Requirements
 
-- Windows PC with MetaTrader 5 installed
-- An MT5 account (demo or live)
-- Basic plan or higher
-- Internet connection
+- **Windows 10 or later** — EdgeBridge is a Windows desktop application.
+- **MetaTrader 5** — Installed and running on the same machine.
+- **MT5 account** — A demo or live broker account logged in to the terminal.
+- **Basic plan or higher** — MT5 Bridge is not available on the Free tier.
+- **Internet connection** — For the WebSocket tunnel to tedge.ai servers.
 
-## How It Works
+## Connection Status Indicators
 
-EdgeBridge runs on your Windows machine and connects to tedge.ai via a secure WebSocket tunnel. No port forwarding or NAT configuration needed — the connection is outbound only.
+The connection status is visible in the top bar of the platform:
+
+| Indicator | Meaning |
+|-----------|---------|
+| **Green dot** | EdgeBridge connected — live data and trade execution active |
+| **Gold dot** | Twelve Data fallback — no bridge connected, using market data API |
+| **Purple dot** | Demo mode — virtual trading active |
+
+## Getting Started
+
+Follow the step-by-step guides to get EdgeBridge running: [Installation](/docs/bridge/installation), [Connecting](/docs/bridge/connection), and [Troubleshooting](/docs/bridge/troubleshooting) if you encounter any issues.
+

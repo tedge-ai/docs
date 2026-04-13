@@ -1,29 +1,49 @@
 # Onboarding
 
-After creating your account, the onboarding wizard helps configure your trading environment.
+After creating your account, the onboarding wizard guides you through three configuration steps. These choices shape how the platform behaves — from the timeframes displayed in your quick-access bar to the lot sizes recommended in AI analyses. You can change any of these settings later from your profile.
 
-## Trading Style
 
-Choose your primary trading style:
+## Step 1: Trading Style
 
-| Style | Timeframes | Description |
-|-------|-----------|-------------|
-| **Scalping** | M1, M3, M5, M15 | Quick trades, small moves |
-| **Intraday** | M5, M15, H1, H4 | Within the day |
-| **Swing** | H1, H4, D1 | Multi-day positions |
-| **Position** | D1, W1, MN | Long-term trades |
+Your trading style determines which timeframes appear by default in the quick-access bar and which timeframe ranges the AI prioritizes during analysis.
 
-Your favorite timeframes will be automatically configured based on your choice.
+| Style | Primary Timeframes | Typical Hold Time |
+|-------|-------------------|-------------------|
+| **Scalping** | M1, M3, M5, M15 | Seconds to minutes |
+| **Intraday** | M5, M15, H1, H4 | Minutes to hours |
+| **Swing** | H1, H4, D1 | Hours to days |
+| **Position** | D1, W1, MN | Days to weeks |
 
-## Risk Profile
+Select the style that best matches how you typically trade. If you trade across multiple styles, choose the one you use most often — you can always star additional timeframes manually once you reach the charts.
 
-Set your default risk per trade:
-- **Conservative** — 0.5% per trade
-- **Moderate** — 1% per trade
-- **Aggressive** — 2% per trade
+## Step 2: Risk Profile
 
-This determines lot sizing recommendations in AI analyses.
+Your risk profile controls the default position sizing that the AI suggests when it proposes trade opportunities. This is a starting point, not a hard limit — you can override the suggested size on every trade.
 
-## Favorite Symbols
+| Profile | Default Risk per Trade | Best For |
+|---------|----------------------|----------|
+| **Conservative** | 0.5% of account | Beginners, capital preservation |
+| **Moderate** | 1.0% of account | Most active traders |
+| **Aggressive** | 2.0% of account | Experienced traders with high conviction setups |
 
-Select the instruments you trade most frequently. They'll appear in your quick access bar.
+The AI uses your risk percentage combined with the distance to the stop loss to calculate a recommended lot size. A conservative profile trading a wide stop will suggest a smaller position than an aggressive profile on a tight stop.
+
+> **Tip:** If you are unsure, start with Moderate. You can always adjust the risk percentage for individual trades when you execute them.
+
+## Step 3: Favorite Symbols
+
+Select the instruments you trade most frequently. These symbols appear in your quick-access symbol bar at the top of the charts page, making it easy to switch between them without searching.
+
+You can select from forex pairs, crypto, indices, and commodities. The available symbols depend on your subscription tier — Free accounts have access to BTC/USD, XAU/USD, and EUR/USD, while paid plans unlock the full symbol list.
+
+
+## After Onboarding
+
+Once you complete the wizard, you land on the main charts page. Your selected symbols appear in the top bar, your favorite timeframes are starred, and the platform is ready for your first analysis. Head to the [Your First Analysis](/docs/getting-started/first-analysis) guide to learn how to run one.
+
+## Changing Your Preferences
+
+You can revisit any of these settings at any time from the **Profile** page. Changes to your trading style update the default timeframe favorites, and changes to your risk profile update future AI recommendations without affecting past analyses.
+
+
+> **Warning:** Changing your trading style resets your timeframe favorites to the defaults for the new style. If you have customized your favorites, note them before switching so you can re-star them afterward.

@@ -46,13 +46,7 @@ export default async function RootLayout({
           navbar={
             <Navbar
               logo={
-                <span className="flex items-center gap-2 font-semibold">
-                  <img src="/icon.svg" alt="tedge" width={22} height={22} className="rounded" />
-                  tedge<span className="text-amber-500">.ai</span>{" "}
-                  <span className="text-sm font-normal text-gray-500">
-                    docs
-                  </span>
-                </span>
+                <span className="flex items-center gap-2 font-semibold"><img src="/icon.svg" alt="tedge" width={22} height={22} className="rounded" /><span>tedge<span className="text-amber-500">.ai</span></span>{" "}<span className="text-sm font-normal text-gray-500">docs</span></span>
               }
               projectLink="https://github.com/tedge-ai"
             />

@@ -1,10 +1,49 @@
 # Alerts & Scheduler
 
-Stay informed about market movements and automate your analysis workflow.
+tedge.ai keeps you informed about market movements and automates your analysis workflow so you never miss an opportunity. The alerts system covers price notifications, browser push, Telegram integration, and an automated analysis scheduler that runs AI analyses on your watchlist without manual intervention.
 
-## Features
 
-- **Price alerts** — Get notified when price reaches a specific level
-- **Push notifications** — Receive alerts on your phone via PWA
-- **Telegram notifications** — Get alerts in your Telegram chat
-- **Analysis scheduler** — Automate AI analyses on your watchlist
+## What's Available
+
+### Price Alerts
+
+Set alerts on specific price levels for any symbol in your watchlist. Choose from four condition types — price above, price below, crosses up through, or crosses down through a level. When the condition is met, you receive a notification through your configured channels.
+
+Price alerts are the foundation of the notification system. They work independently of AI analysis and are useful for monitoring key levels you have identified manually or that the AI highlighted during an analysis.
+
+### Push Notifications
+
+Receive instant notifications in your browser or on your mobile device when alerts trigger, trades close, or scheduled analyses complete. Push notifications use the Web Push API and work even when the tedge.ai tab is in the background.
+
+For the best mobile experience, install tedge.ai as a Progressive Web App (PWA) by adding it to your home screen. This enables background notifications just like a native app.
+
+### Telegram Integration
+
+Connect your Telegram account to receive notifications as Telegram messages. This provides a reliable secondary notification channel and also unlocks bot commands — check your positions, view stats, and even run AI analyses directly from Telegram.
+
+### Analysis Scheduler
+
+Automate your morning routine by scheduling AI analyses to run at specific times on your preferred symbols. The scheduler executes analyses in the background and notifies you when new opportunities are found. This is available on Advanced plans and above.
+
+## Alert Limits by Plan
+
+| Feature | Free | Basic | Advanced | Premium |
+|---------|------|-------|----------|---------|
+| Active price alerts | 3 | 20 | 100 | Unlimited |
+| Push notifications | Yes | Yes | Yes | Yes |
+| Telegram notifications | Yes | Yes | Yes | Yes |
+| Scheduler slots | — | 2 | 10 | Unlimited |
+
+> **Tip:** Even on the Free tier, you can set up to 3 price alerts with full push and Telegram notifications. This is enough to monitor the three available symbols at critical levels.
+
+## How Alerts Fit Your Workflow
+
+A typical workflow using the alerts system looks like this: run an AI analysis on your watchlist, identify the key levels where you would want to enter a trade, and set price alerts at those levels. Then go about your day. When price approaches your level, you receive a push notification or Telegram message, open the platform, review the chart, and decide whether to execute.
+
+For an even more automated approach, combine price alerts with the scheduler. The scheduler runs fresh analyses at set times, and price alerts notify you when the market reaches the zones the AI identified. Together, they keep you connected to the market without requiring constant screen time.
+
+
+
+> **Warning:** Alerts are not a substitute for your own analysis and judgment. They notify you that a condition has been met — the decision to trade is always yours.
+
+Explore each feature in detail in the following pages: [Price Alerts](/docs/alerts/price-alerts), [Push Notifications](/docs/alerts/notifications), and [Scheduler](/docs/alerts/scheduler).

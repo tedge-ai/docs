@@ -1,22 +1,51 @@
 # Timeframes
 
-## All Available Timeframes
+tedge.ai supports all 21 MetaTrader 5 timeframes, from one-minute candles to monthly bars. This includes the less common intervals like M2, M3, M4, H6, and H12 that many web platforms omit.
 
-tedge.ai supports all 21 MetaTrader 5 timeframes:
+## All Available Timeframes
 
 | Category | Timeframes |
 |----------|-----------|
-| Minutes | M1, M2, M3, M4, M5, M6, M10, M12, M15, M20, M30 |
-| Hours | H1, H2, H3, H4, H6, H8, H12 |
-| Higher | D1 (Daily), W1 (Weekly), MN (Monthly) |
+| **Minutes** | M1, M2, M3, M4, M5, M6, M10, M12, M15, M20, M30 |
+| **Hours** | H1, H2, H3, H4, H6, H8, H12 |
+| **Higher** | D1 (Daily), W1 (Weekly), MN (Monthly) |
 
-## Favorites
+## Timeframe Favorites (Star System)
 
-Customize which timeframes appear in the quick access bar:
-- **Desktop** — Click the chevron next to the TF pills, then star your favorites
-- **Mobile** — Tap "...", then long-press a TF to toggle favorite
+The timeframe bar at the top of the chart shows pill-shaped buttons for quick switching. With 21 available timeframes, you probably do not want all of them visible at once. The star system lets you curate which timeframes appear in your quick-access bar.
 
-## Data Sources
+### On Desktop
 
-- **MT5 Bridge connected** — All TFs natively from your broker
-- **Twelve Data fallback** — Natively supports M1, M5, M15, M30, H1, H2, H4, D1, W1, MN. Other TFs (M2, M3, H6, etc.) are automatically calculated by aggregating from the nearest base TF.
+Click the chevron icon at the right end of the timeframe pills to expand the full timeframe list. Each timeframe has a star icon — click it to toggle the timeframe as a favorite. Starred timeframes appear in the main pill bar; unstarred ones are hidden but still accessible from the expanded list.
+
+### On Mobile
+
+Tap the "..." button at the end of the timeframe row to open the full list. Long-press any timeframe to toggle its favorite status.
+
+
+> **Tip:** During onboarding, your trading style selection automatically stars a set of timeframes suited to that style. Scalpers get M1-M15 starred, swing traders get H1-D1, and so on. You can customize this at any time.
+
+## Timeframe Aggregation
+
+Not all data sources provide native data for every timeframe. When using Twelve Data as your data source (no EdgeBridge connected), the platform handles this transparently through automatic aggregation:
+
+### Native Twelve Data Timeframes
+
+M1, M5, M15, M30, H1, H2, H4, D1, W1, MN — these are fetched directly from the API with no processing required.
+
+### Aggregated Timeframes
+
+M2, M3, M4, M6, M10, M12, M20, H3, H6, H8, H12 — these are calculated on the fly by combining candles from the nearest lower native timeframe. For example, M3 candles are built from three consecutive M1 candles, and H6 candles are built from three H2 candles.
+
+The aggregation is seamless — you will not notice any difference in chart behavior. When EdgeBridge is connected, all timeframes are fetched natively from your MT5 broker, so no aggregation is needed.
+
+## Data Sources by Connection Type
+
+| Connection | Native Timeframes | Aggregated |
+|------------|------------------|------------|
+| **MT5 Bridge** | All 21 | None |
+| **Twelve Data** | M1, M5, M15, M30, H1, H2, H4, D1, W1, MN | M2, M3, M4, M6, M10, M12, M20, H3, H6, H8, H12 |
+
+## Switching Timeframes
+
+Click any timeframe pill to switch instantly. The chart reloads with the new candle data, and any AI-configured indicators automatically adjust to the recommendations for that timeframe range (LTF, MTF, or HTF). Your drawings persist across timeframes — a horizontal line drawn on the H1 chart remains visible when you switch to M15.

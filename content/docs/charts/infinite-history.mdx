@@ -1,11 +1,46 @@
 # Infinite History
 
+tedge.ai lets you scroll back through historical price data as far as the data source allows. Rather than loading a fixed window of candles, the chart fetches additional history on demand as you scroll left, giving you the feeling of an infinite timeline.
+
 ## How It Works
 
-Scroll left on the chart to load older candles automatically. The platform loads historical data in batches as you scroll.
+When you first open a chart, the platform loads an initial batch of candles — typically up to 2,000 depending on the timeframe and your subscription plan. As you scroll left past the oldest visible candle, the platform automatically requests the next batch of historical data from the server.
+
+Each scroll triggers a load of approximately 300 additional candles. The loading happens in the background, and new candles appear seamlessly on the left side of the chart. A brief loading indicator may flash while the data is being fetched.
+
+
+## Data Sources
+
+The depth of available history depends on which data source is active:
+
+### With MT5 Bridge
+
+When EdgeBridge is connected, historical data comes from your MT5 broker. Most brokers provide extensive history — often years of data on higher timeframes and several months on lower timeframes. The exact depth depends on your broker's data retention policies.
+
+### With Twelve Data
+
+When no bridge is connected, Twelve Data serves as the data provider. Twelve Data typically provides several years of daily and weekly data, and progressively shorter histories on lower timeframes (a few months of M1 data, for example).
+
+## Weekend and Market Closure Handling
+
+Financial markets close on weekends and certain holidays. The chart handles these gaps cleanly — there are no empty spaces where the market was closed. Candles flow continuously from Friday's close to Monday's open without visual breaks that would distort your technical analysis.
+
+> **Tip:** If you are analyzing a specific historical event, scroll back to that period and then switch between timeframes to see the price action at different resolutions. Your scroll position is preserved when switching timeframes, so you stay in the same time window.
+
+## Use Cases
+
+**Backtesting setups visually** — Scroll back to a period where your preferred pattern occurred and practice identifying entry and exit points. This is especially useful when combined with the analysis replay feature, where you can step through candles one by one.
+
+**Multi-timeframe context** — When analyzing a daily chart setup, scroll back several months to understand the broader market context. Then switch to H4 or H1 to see the intermediate structure within that larger picture.
+
+**Event analysis** — Navigate to the date of a major news event (Fed decision, earnings release, geopolitical event) to study how price reacted. Understanding historical reactions helps you prepare for similar events in the future.
+
 
 ## Limitations
 
-- Initial load: up to 2,000 candles (varies by plan)
-- Each scroll loads 300 additional candles
-- Total available history depends on the data source (Twelve Data or MT5)
+- The initial candle load and per-scroll batch sizes may vary by plan and timeframe.
+- Very low timeframes (M1, M2) have shorter total history available compared to higher timeframes like D1 or W1.
+- Scroll performance remains smooth regardless of how much history is loaded, as the chart engine only renders the visible portion of the data.
+- Drawings placed on historical candles are saved and will appear the next time you scroll back to that area.
+
+> **Tip:** On higher timeframes like D1 and W1, you can typically scroll back several years, giving you access to major market cycles and long-term support/resistance levels that remain relevant today.

@@ -1,40 +1,68 @@
 # Your First Analysis
 
-## Run an Analysis
+This guide walks you through running your first AI analysis, from selecting a symbol to reading the results. By the end, you will have zones drawn on your chart, indicator recommendations configured, and one or more trade opportunities to evaluate.
 
-1. Navigate to the **Charts** page
-2. Select a symbol (e.g., BTC/USD)
-3. Open the **Analyse** panel (bottom tab on mobile, right sidebar on desktop)
-4. Choose a strategy from the dropdown (default: SMC)
-5. Click the **Play** button
+## Step 1: Select a Symbol
 
-## What Happens
+Open the charts page and click on a symbol from your quick-access bar at the top. If you are on the Free tier, choose from BTC/USD, XAU/USD, or EUR/USD. The chart loads with the last-viewed timeframe for that symbol.
 
-The AI agent will:
-1. Analyze the H4 chart for macro bias
-2. Analyze the H1 chart for intermediate structure
-3. Analyze the M15 chart for actionable zones
-4. Configure indicators adapted to the symbol
-5. Identify and draw zones on your chart
-6. Propose trading opportunities with entry, SL, TP
 
-## Understanding the Results
+## Step 2: Open the Analysis Panel
+
+On desktop, the analysis panel is located in the right sidebar — click the **Analyse** tab. On mobile, tap the **Analyse** tab at the bottom of the screen. The panel displays a strategy selector dropdown and the play button to launch the analysis.
+
+## Step 3: Choose a Strategy
+
+Select a strategy from the dropdown menu. The default is **Smart Money Concepts (SMC)**, which works well for most market conditions. If you are unsure which strategy to choose, start with SMC — it covers order blocks, fair value gaps, break of structure, and liquidity sweeps in a single pass.
+
+The six available strategies are described in detail on the [Strategies](/docs/analysis/strategies) page.
+
+## Step 4: Run the Analysis
+
+Click the **Play** button to launch the analysis. The AI agent begins working immediately, and you can watch its progress in real time as it streams its reasoning into the analysis panel.
+
+
+The analysis runs in two phases:
+
+**Phase 1 — Structure Reading.** The agent examines the chart across multiple timeframes, typically starting with H4 for the macro bias, then H1 for intermediate structure, and finally M15 for actionable entry zones. During this phase, you will see the agent identifying trends, key levels, and zones of interest.
+
+**Phase 2 — Opportunity Construction.** Based on the zones and structure identified in Phase 1, the agent constructs specific trade opportunities. Each opportunity includes a direction (LONG or SHORT), entry zone, stop loss, take profit targets (TP1 and TP2), risk-to-reward ratio, and a probability rating.
+
+## Step 5: Read the Results
+
+Once the analysis completes, the results appear in two places: directly on your chart as visual overlays, and in the analysis panel as structured opportunity cards.
 
 ### Zones on the Chart
-- **Green rectangles** — Demand zones (buy areas)
-- **Red rectangles** — Supply zones (sell areas)
-- **Blue lines** — Key levels (S/R, pivots)
-- **Orange lines** — Liquidity pools (stop hunts)
 
-### Opportunities
-Each opportunity includes:
-- **Direction** — LONG or SHORT
-- **Entry zone** — Price range for entry
-- **SL** — Stop loss level
-- **TP1 / TP2** — Take profit targets
-- **R:R** — Risk-to-reward ratio
-- **Probability** — LOW, MODERATE, or HIGH
+The AI draws colored zones on your chart to highlight significant price areas:
 
-### Indicators
-The AI automatically configures EMA/SMA indicators adapted to the symbol.
-When you switch timeframes, indicators adjust automatically.
+- **Green rectangles** mark demand zones — areas where the AI expects buying pressure.
+- **Red rectangles** mark supply zones — areas where selling pressure is expected.
+- **Blue lines** indicate key support and resistance levels, pivot points, and structural boundaries.
+- **Orange lines** highlight liquidity pools — clusters of stops that price may target before reversing.
+
+
+### Opportunity Cards
+
+Each opportunity card in the analysis panel includes:
+
+| Field | Description |
+|-------|-------------|
+| **Direction** | LONG or SHORT |
+| **Entry zone** | The price range where the AI suggests entering |
+| **SL** | Stop loss level |
+| **TP1 / TP2** | First and second take profit targets |
+| **R:R** | Risk-to-reward ratio for each TP level |
+| **Probability** | LOW, MODERATE, or HIGH confidence rating |
+
+### Indicator Recommendations
+
+During the analysis, the AI also configures indicators tailored to the symbol. EMA lines appear on your chart automatically, and they adjust when you switch timeframes. You can see the reasoning behind each indicator choice in the analysis summary.
+
+> **Tip:** After reading the results, try switching between timeframes to see how the zones align across different views. The indicators will adapt automatically to match the AI's recommendations for each timeframe range.
+
+## What's Next
+
+If an opportunity looks compelling, you can execute it directly from the opportunity card — click the **Execute** button to open the trade dialog with pre-filled parameters. See [Opening a Trade](/docs/trading/open-trade) for details.
+
+To understand how the AI evaluates your trades after closure, read about the [AI Coach](/docs/analysis/ai-coach).

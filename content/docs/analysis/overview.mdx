@@ -1,15 +1,52 @@
 # AI Analysis
 
-Edge AI analyzes market structure to identify trading opportunities. The agent examines multiple timeframes, identifies key zones, and proposes trade setups.
+The AI analysis engine is the heart of tedge.ai. It examines market structure across multiple timeframes, identifies high-probability trading zones, and proposes concrete trade setups — all streamed in real time so you can follow the agent's reasoning as it works.
+
 
 ## How It Works
 
-1. **Select a strategy** — Choose from 6 pre-defined strategies or create a custom one
-2. **Click Analyze** — The AI agent starts a multi-step analysis
-3. **Phase 1** — Structure reading (H4 → H1 → M15), zone identification
-4. **Phase 2** — Opportunity construction, entry/SL/TP calculation
-5. **Results** — Zones appear on chart, opportunities in the analysis panel
+An analysis runs in two distinct phases, and you can watch both unfold live in the analysis panel.
 
-## Cost
+### Phase 1: Structure Reading
 
-Each analysis consumes AI credits (~0.30-0.70 depending on depth). Credits are included in your plan.
+The AI agent starts by reading the market structure from the top down, typically examining three timeframes in sequence:
+
+1. **H4 (macro bias)** — The agent identifies the dominant trend, major support and resistance zones, and the overall market context. This establishes the directional bias for the analysis.
+2. **H1 (intermediate structure)** — Within the macro context, the agent zooms in to find the intermediate trend, break-of-structure points, and zones where price is likely to react.
+3. **M15 (actionable zones)** — The agent identifies precise entry zones — order blocks, fair value gaps, demand/supply areas — where a trade setup can be constructed.
+
+During this phase, the agent draws zones directly on your chart and streams its reasoning into the analysis panel.
+
+### Phase 2: Opportunity Construction
+
+Based on the zones and structure identified in Phase 1, the agent constructs specific trade opportunities. For each opportunity, it defines:
+
+- A direction (LONG or SHORT) aligned with the structural bias.
+- An entry zone — the price range where entering makes sense.
+- A stop loss (SL) placed beyond the invalidation level of the setup.
+- Take profit targets (TP1 and TP2) at logical structural targets.
+- A risk-to-reward ratio (R:R) for each TP level.
+- A probability rating (LOW, MODERATE, or HIGH) based on confluence.
+
+### Streaming Results
+
+The entire analysis streams in real time. You see the agent's text output as it types, and zones appear on the chart as they are identified — there is no waiting for a final result. This transparency lets you understand the agent's logic and decide whether you agree with its conclusions.
+
+
+## Running an Analysis
+
+1. Open the charts page and select a symbol.
+2. Open the **Analyse** tab in the right sidebar (desktop) or bottom tabs (mobile).
+3. Choose a strategy from the dropdown — the default is Smart Money Concepts.
+4. Click the **Play** button to start the analysis.
+5. Watch the results stream in and the zones appear on your chart.
+
+> **Tip:** You do not need to be on a specific timeframe to run an analysis. The agent chooses its own timeframe sequence based on the strategy. After the analysis completes, switch between timeframes to see how the zones align across different views.
+
+## Credit Cost
+
+Each analysis consumes AI credits from your monthly allocation. The cost typically ranges from 0.30 to 0.70 credits depending on the analysis depth and the number of timeframes examined. You can see your remaining credit balance in the analysis panel header and on your profile page.
+
+## What Happens to Old Analyses
+
+Each new analysis for a symbol replaces the previous one. The old zones are cleared from the chart and the new zones take their place. However, all past analyses are saved and accessible from the [Analyses](/docs/analysis/replay) page, where you can replay them and see how the setups performed.

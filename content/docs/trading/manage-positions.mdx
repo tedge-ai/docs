@@ -1,22 +1,68 @@
 # Managing Positions
 
-## Open Positions
+Once a trade is open, you manage it from the Trades panel in the sidebar or directly on the chart. tedge.ai provides several tools for modifying, partially closing, and monitoring your positions in real time.
 
-Open positions appear in the **Trades** panel and as overlays on the chart.
+## The Trades Panel
 
-Each position shows:
-- Symbol, direction, lots
+Open the **Trades** tab in the right sidebar (desktop) or bottom tabs (mobile). The panel lists all open positions with the following information for each:
+
+- Symbol and direction (BUY/SELL icon)
+- Lot size
 - Entry price
-- Current P&L (real-time)
-- SL and TP levels (editable inline)
+- Current P&L (updates in real time, color-coded green for profit and red for loss)
+- SL and TP levels
 
-## Modifying a Position
 
-- Click on the SL or TP value to edit it inline
-- Changes are applied immediately
+## Modifying SL and TP
+
+You can modify stop loss and take profit levels in two ways:
+
+### Inline Editing
+
+In the Trades panel, click on the SL or TP value to edit it directly. Type the new price and press Enter to apply. The change takes effect immediately — in demo mode, the tick engine starts monitoring the new level; in live mode, the modification is sent to your MT5 broker.
+
+### Drag on Chart
+
+Open positions are displayed on the chart as horizontal lines for the entry, SL, and TP levels. You can drag the SL or TP line up or down to adjust the level visually. When you release the line, a confirmation dialog appears showing the new price and asking you to confirm the change.
+
+> **Tip:** Dragging SL/TP on the chart is the fastest way to adjust levels based on what you see in the price action. The confirmation dialog prevents accidental modifications.
+
+
+## TP1/TP2 Partial Close
+
+If you set both TP1 and TP2 when opening the trade, the platform handles partial closes automatically:
+
+1. When price reaches **TP1**, a configured portion of the position is closed (typically 50%), locking in partial profits.
+2. The remaining position continues to run toward **TP2** with the stop loss optionally moved to breakeven.
+3. When price reaches **TP2**, the rest of the position is closed.
+
+This approach lets you secure profits at the first target while keeping upside exposure for the extended move. The partial close percentages and breakeven behavior are configured in the execution dialog when you open the trade.
+
+## Trailing Stop (Concept)
+
+The platform supports the concept of a trailing stop — as price moves in your favor, you can periodically drag the SL closer to the current price to lock in more profit. While there is no automatic trailing stop feature yet, the drag-to-modify interaction makes manual trailing straightforward.
 
 ## Closing a Position
 
-- Click the **X** button on the position row
-- The position closes at the current market price
-- AI Coach review is generated automatically
+To close a position at the current market price, click the **X** button on the position row in the Trades panel. The position is closed immediately, the P&L is realized, and the AI Coach begins generating a post-trade review.
+
+You can also close a position from the chart by right-clicking on the position overlay and selecting "Close position."
+
+## Position Overlay on Chart
+
+Each open position displays on the chart as a set of horizontal lines:
+
+- **Entry line** — Shows where you entered, with the direction and lot size labeled.
+- **SL line** — Red dashed line at your stop loss level.
+- **TP1 / TP2 lines** — Green dashed lines at your take profit levels.
+- **P&L label** — A floating label showing the current unrealized profit or loss.
+
+These overlays update in real time and remain visible as you switch between timeframes.
+
+## Automatic Closure
+
+In demo mode, the tick engine monitors price against your SL and TP levels continuously. When price reaches either level, the trade closes automatically. The engine also tracks MFE (Maximum Favorable Excursion) and MAE (Maximum Adverse Excursion) throughout the life of the trade for the AI Coach review.
+
+In live mode, SL and TP orders are placed on your MT5 broker, so they execute server-side even if the web platform is closed.
+
+> **Warning:** In demo mode, SL/TP execution depends on the tick engine receiving price updates. If you close the platform while a demo trade is open, the trade will resume monitoring when you return, but SL/TP might not trigger while the platform is closed.

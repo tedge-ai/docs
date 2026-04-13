@@ -1,21 +1,51 @@
 # Installation
 
+EdgeBridge is distributed as a Windows installer that bundles everything needed to connect your MT5 terminal to tedge.ai. The installation takes about two minutes and includes a setup wizard that guides you through the initial configuration.
+
 ## Download
 
-1. Log in to [app.tedge.ai](https://app.tedge.ai)
-2. Navigate to the **Bridge** page
-3. Download the EdgeBridge installer for Windows
-4. Run the installer and follow the setup wizard
+1. Log in to [app.tedge.ai](https://app.tedge.ai) on your Windows machine.
+2. Navigate to the **Bridge** page from the main navigation.
+3. Click the **Download EdgeBridge** button to download the installer.
+4. Save the file and run it to begin installation.
 
-## Setup Wizard
-
-The installer will guide you through:
-1. **MT5 Path** — Automatically detects your MetaTrader 5 installation
-2. **Pairing** — Generates a pairing code to link with your tedge.ai account
-3. **System Tray** — EdgeBridge runs in the background with a system tray icon
 
 ## System Requirements
 
-- Windows 10 or later
-- MetaTrader 5 installed
-- Python runtime (bundled with the installer)
+| Requirement | Details |
+|-------------|---------|
+| **Operating system** | Windows 10 or later (64-bit) |
+| **MetaTrader 5** | Installed and running |
+| **Disk space** | Approximately 50 MB |
+| **Python runtime** | Bundled with the installer — no separate installation needed |
+| **Network** | Internet connection for the WebSocket tunnel |
+
+## Running the Installer
+
+Double-click the downloaded installer to launch the setup wizard. The wizard walks you through three steps:
+
+### Step 1: MT5 Path Detection
+
+The installer automatically scans your system for MetaTrader 5 installations. If it finds one, the path is pre-filled. If you have multiple MT5 installations (e.g., from different brokers), select the one you want to connect. If detection fails, you can browse to the MT5 installation folder manually.
+
+### Step 2: Installation Location
+
+Choose where to install EdgeBridge. The default location is `C:\Program Files\EdgeBridge`. The installer creates the necessary folders and places the application files.
+
+### Step 3: System Tray Configuration
+
+EdgeBridge is designed to run in the background. The installer configures it to start with Windows and appear as a system tray icon. You can disable auto-start later from the EdgeBridge settings if you prefer to launch it manually.
+
+> **Tip:** Keep auto-start enabled if you trade regularly. EdgeBridge uses minimal system resources when idle and automatically reconnects when your machine starts up, so the platform always has live data when you open it.
+
+## After Installation
+
+Once the installer completes, EdgeBridge launches automatically and appears as an icon in your system tray (the small icon area near the clock in the Windows taskbar). Right-click the icon to access settings, view connection status, and manage the application.
+
+The next step is to pair EdgeBridge with your tedge.ai account. See [Connecting](/docs/bridge/connection) for the pairing process.
+
+## Updating EdgeBridge
+
+When a new version of EdgeBridge is available, you will see a notification on the Bridge page in the platform. Download the new installer and run it — it will update the existing installation without affecting your configuration or pairing.
+
+> **Warning:** Make sure MetaTrader 5 is running before launching EdgeBridge. The application needs to communicate with the MT5 terminal to function properly. If MT5 is not running, EdgeBridge will wait and retry the connection periodically.

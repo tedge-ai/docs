@@ -6,4 +6,5 @@ export default {
   'alerts': 'Alerts & Scheduler',
   'bridge': 'MT5 Bridge',
   'assistant': 'AI Assistant',
+  'profile': 'Profile & Settings',
 };

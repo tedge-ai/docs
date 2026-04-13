@@ -4,4 +4,5 @@ export default {
   'open-trade': 'Opening a Trade',
   'manage-positions': 'Managing Positions',
   history: 'Trade History',
+  journal: 'Trade Journal',
 };

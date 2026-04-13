@@ -1,14 +1,58 @@
 # Price Alerts
 
+Price alerts notify you when a symbol reaches a specific price level. They are the simplest and most direct way to stay informed about market movements without watching the chart continuously.
+
 ## Creating an Alert
 
-1. Open the **Alertes** panel
-2. Click **+ New Alert**
-3. Select the symbol and set the target price
-4. Choose the condition (crosses above / crosses below)
-5. Save
+1. Open the **Alerts** panel from the right sidebar (desktop) or bottom tabs (mobile).
+2. Click **+ New Alert**.
+3. Select the symbol you want to monitor.
+4. Enter the target price level.
+5. Choose the condition type.
+6. Click **Save**.
+
+
+## Condition Types
+
+Each alert uses one of four conditions to determine when it triggers:
+
+| Condition | Triggers When |
+|-----------|---------------|
+| **Price Above** | Current price is above the target level |
+| **Price Below** | Current price is below the target level |
+| **Crosses Up** | Price crosses the target level from below to above |
+| **Crosses Down** | Price crosses the target level from above to below |
+
+The "crosses" conditions are directional — they fire only when price moves through the level in the specified direction. This is useful for breakout monitoring, where you want to know when price breaks above resistance (Crosses Up) or below support (Crosses Down), but not when it simply sits above or below the level.
+
+The "above/below" conditions are state-based — they trigger whenever the condition is true, which is useful for monitoring whether price is in a specific zone.
+
+## Repeat Mode
+
+By default, a price alert triggers once and then deactivates. If you want the alert to fire every time the condition is met, enable **Repeat mode** when creating the alert. A repeating alert stays active indefinitely and notifies you each time price crosses the level, which is useful for monitoring levels that price may test multiple times.
+
+> **Tip:** Use repeat mode on key support and resistance levels to track every test. This helps you notice when a level is weakening from repeated touches.
+
+## Notification Channels
+
+When a price alert triggers, you receive notifications through all your active channels:
+
+- **Portal notification** — A notification appears in the alerts panel within the platform.
+- **Browser push** — If push notifications are enabled, a system notification appears on your device.
+- **Telegram** — If your Telegram account is linked, a message is sent to your chat with the tedge.ai bot.
+
+## Managing Alerts
+
+The Alerts panel lists all your active and triggered alerts. For each alert, you can:
+
+- **Edit** — Change the price level or condition.
+- **Pause / Resume** — Temporarily disable an alert without deleting it.
+- **Delete** — Remove the alert permanently.
+- **View trigger history** — See when the alert last fired.
 
 ## Alert Limits
+
+The number of active alerts depends on your subscription tier:
 
 | Plan | Active Alerts |
 |------|--------------|
@@ -17,9 +61,6 @@
 | Advanced | 100 |
 | Premium | Unlimited |
 
-## When Triggered
+Paused alerts count toward your limit. Triggered (non-repeating) alerts that have already fired do not.
 
-When price reaches your alert level:
-- Push notification on your device (if enabled)
-- Telegram message (if linked)
-- Alert marked as triggered in the panel
+> **Warning:** Price alerts depend on the platform receiving price data. If you are using Twelve Data (no bridge connected), there may be slight delays compared to your broker's feed. For time-sensitive alerts in live trading, keep EdgeBridge connected for the most accurate pricing.

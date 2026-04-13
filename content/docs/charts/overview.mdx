@@ -1,12 +1,56 @@
 # Charts
 
-Professional charting powered by TradingView Lightweight Charts.
+The charts page is the core workspace of tedge.ai. Built on TradingView Lightweight Charts, it delivers a fast, responsive charting experience with professional-grade tools — all inside a dark-themed interface designed for extended trading sessions.
 
-## Features
 
-- **21 timeframes** — From M1 to Monthly, including M2, M3, H6, H12
-- **Drawing tools** — Horizontal lines, trendlines, channels, Fibonacci, arrows, positions
-- **Indicators** — EMA, SMA, Bollinger Bands, RSI, ADX (AI-configurable)
-- **Infinite scroll** — Load historical data by scrolling left
-- **AI overlay** — Zones and levels from analysis appear directly on the chart
-- **Real-time updates** — Live price feed via MT5 Bridge or Twelve Data
+## Layout
+
+The charts page is organized into distinct areas that give you everything you need without clutter:
+
+- **Top bar** — Symbol selector, timeframe pills, drawing tools, indicators, and the Buy/Sell buttons.
+- **Chart area** — The main candlestick chart with real-time price updates, AI-drawn zones, and your drawings.
+- **Right sidebar (desktop)** — Tabs for Analysis, Trades, Alerts, and the AI Assistant.
+- **Bottom tabs (mobile)** — The same panels accessible through a tab bar at the bottom of the screen.
+
+## Chart Types
+
+The platform renders standard candlestick charts with open, high, low, and close data. AI analysis zones, indicator overlays, and your manual drawings all layer on top of the price data in a clean, non-overlapping layout.
+
+## Real-Time Data
+
+tedge.ai supports two data sources, and the active source is indicated by the connection dot in the top bar:
+
+| Indicator | Source | Description |
+|-----------|--------|-------------|
+| **Green dot** | MT5 Bridge | Live bid/ask data from your broker via EdgeBridge |
+| **Gold dot** | Twelve Data | Market data fallback when no bridge is connected |
+| **Purple dot** | Demo mode | Simulated trading on real price data |
+
+When EdgeBridge is connected, you get your broker's full symbol list with real-time tick data. Without the bridge, Twelve Data provides broad market coverage with slight latency.
+
+## Key Features
+
+**21 timeframes** ranging from M1 to Monthly, including uncommon intervals like M2, M3, H6, and H12. Star your favorites for quick access. See [Timeframes](/docs/charts/timeframes) for the full list.
+
+**15 drawing tools** organized into Lines, Analysis, and Annotation categories. From horizontal lines and Fibonacci retracements to position sizing tools with multi-TP support. See [Drawing Tools](/docs/charts/drawings) for details on each tool.
+
+**Configurable indicators** including EMA, Bollinger Bands, and Market Structure overlays. The AI can also configure indicators automatically during analysis. See [Indicators](/docs/charts/indicators).
+
+**Infinite scroll** — scroll left on the chart to load historical candles on demand. The platform fetches data in batches as you explore deeper into history. See [Infinite History](/docs/charts/infinite-history).
+
+**AI overlay** — when you run an analysis, the detected zones (supply, demand, key levels, liquidity pools) appear directly on the chart as colored rectangles and lines. These overlays persist until you clear them or run a new analysis.
+
+> **Tip:** Use the keyboard shortcut `Esc` to deselect the current drawing tool and return to the default pointer mode. This prevents accidental drawings when you just want to navigate the chart.
+
+## Navigation
+
+**Zoom** — Use your mouse scroll wheel to zoom in and out on the chart. Zooming in reveals more detail on recent candles; zooming out shows broader context.
+
+**Pan** — Click and drag on the chart to pan left (older data) or right (newer data). On mobile, use a single finger to pan.
+
+**Pinch to zoom (mobile)** — Use two fingers to zoom in and out on touch devices.
+
+**Price scale** — Drag the price axis on the right side of the chart to manually adjust the vertical scale. Double-click the price axis to reset to auto-fit.
+
+**Time scale** — The time axis at the bottom of the chart shows dates and times. It adjusts automatically based on the selected timeframe and zoom level.
+

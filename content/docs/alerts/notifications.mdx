@@ -1,32 +1,83 @@
 # Push Notifications
 
-## Setup
+tedge.ai supports browser push notifications and Telegram messages to keep you informed about alert triggers, trade closures, and completed analyses — even when you are not actively looking at the platform.
 
-1. When you first visit the platform, a bell icon appears in the topbar
-2. Click it to enable push notifications
-3. Allow notifications in your browser
-4. You're set!
+## Browser Push Notifications
 
-## PWA (Mobile)
+### Setup
 
-For the best mobile experience:
-1. Open the platform in Safari (iOS) or Chrome (Android)
-2. Add to Home Screen
-3. Enable notifications when prompted
-4. Receive alerts even when the app is in the background
+1. Look for the bell icon in the top bar when you first visit the platform.
+2. Click the bell icon to enable push notifications.
+3. Your browser will display a permission dialog — click **Allow**.
+4. The bell icon changes to indicate notifications are active.
 
-## Telegram
+Once enabled, you receive desktop or mobile notifications for all alert triggers, trade events (SL/TP hit, manual close), and scheduled analysis completions.
 
-Link your Telegram account for an additional notification channel:
-1. Go to **Profile** page
-2. Click **Link Telegram**
-3. Click the generated link to open @tedgeaibot in Telegram
-4. Send /start to complete the pairing
 
-### Telegram Commands
+### PWA Installation (Mobile)
+
+For the best notification experience on mobile, install tedge.ai as a Progressive Web App:
+
+**On iOS (Safari):**
+1. Open [app.tedge.ai](https://app.tedge.ai) in Safari.
+2. Tap the Share button (square with arrow).
+3. Scroll down and tap **Add to Home Screen**.
+4. Name it "tedge.ai" and tap Add.
+5. Open the app from your home screen and enable notifications when prompted.
+
+**On Android (Chrome):**
+1. Open [app.tedge.ai](https://app.tedge.ai) in Chrome.
+2. Tap the three-dot menu.
+3. Tap **Add to Home screen** (or **Install app**).
+4. Confirm the installation.
+5. Open the app and enable notifications when prompted.
+
+The PWA version receives push notifications in the background, just like a native app. You do not need to keep the browser tab open.
+
+> **Tip:** PWA notifications on iOS require iOS 16.4 or later. If you do not see the notification permission prompt, check that your iOS version is up to date.
+
+## Telegram Notifications
+
+Telegram provides a reliable secondary notification channel that works across all your devices. It also unlocks bot commands for checking positions and running analyses from within Telegram.
+
+### Linking Your Account
+
+1. Go to the **Profile** page on the platform.
+2. Click **Link Telegram** in the integrations section.
+3. A link is generated — click it to open the @tedgeaibot conversation in Telegram.
+4. Send `/start` to the bot to complete the pairing.
+5. The platform confirms the connection, and your Telegram username appears in the integrations section.
+
+
+### What You Receive
+
+Once linked, Telegram receives the same notifications as browser push:
+
+- **Price alert triggers** — The symbol, price, and condition that was met.
+- **Trade closures** — Entry/exit prices, P&L, and the AI Coach score.
+- **Scheduled analysis results** — A summary of opportunities found, with a link to view the full analysis on the platform.
+
+### Telegram Bot Commands
+
+The tedge.ai bot also responds to commands, giving you quick access to information without opening the platform:
 
 | Command | Description |
 |---------|-------------|
-| `/positions` | List your open demo positions |
-| `/stats` | Show your trading statistics |
-| `/analyse BTCUSD` | Run an AI analysis on a symbol |
+| `/positions` | List your currently open positions with P&L |
+| `/stats` | Display your trading statistics (win rate, total P&L, average score) |
+| `/analyse BTCUSD` | Run an AI analysis on the specified symbol and receive the results in Telegram |
+
+> **Tip:** The `/analyse` command consumes AI credits just like running an analysis on the platform. The results are a text summary — for the full chart experience with zones and replay, open the platform.
+
+### Unlinking Telegram
+
+To disconnect your Telegram account, go to the **Profile** page and click **Unlink Telegram** in the integrations section. You will stop receiving Telegram notifications immediately, and bot commands will no longer work.
+
+## Notification Types Summary
+
+| Event | Portal | Browser Push | Telegram |
+|-------|--------|-------------|----------|
+| Price alert triggered | Yes | Yes | Yes |
+| Trade closed (SL/TP/manual) | Yes | Yes | Yes |
+| Scheduled analysis complete | Yes | Yes | Yes |
+| AI Coach review ready | Yes | No | No |

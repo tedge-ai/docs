@@ -1,19 +1,56 @@
 # Trading
 
-tedge.ai supports both demo and live trading with full position management.
+tedge.ai supports full trade execution and position management in both demo and live modes. Whether you are paper trading to test strategies or executing real orders through your MT5 broker, the trading interface provides the same tools: one-click execution from AI opportunities, real-time P&L tracking, drag-to-modify SL/TP levels, and automatic AI Coach reviews on every closed trade.
 
-## Modes
 
-- **Demo mode** — Paper trading with a virtual $10,000 balance. Perfect for testing strategies risk-free.
-- **Live mode** — Real trades via MT5 Bridge (Basic+ plans). Requires EdgeBridge connected.
+## Demo vs Live Mode
 
-Toggle between modes using the DEMO/LIVE button in the topbar.
+The platform operates in one of two modes at any time, toggled with the **DEMO / LIVE** button in the top bar.
 
-## Features
+### Demo Mode
 
-- Open BUY/SELL positions from the chart or trade panel
-- Set SL and TP levels
-- Real-time P&L tracking
-- Position overlay on chart
-- AI Coach review on trade closure
-- Full trade history with statistics
+Available to all users regardless of subscription tier. Demo mode provides a virtual trading account with configurable starting capital (default $10,000). Trades execute at real market prices, and the tick engine monitors SL/TP levels continuously to trigger closes automatically. Demo mode is ideal for testing strategies, learning the platform, and building confidence before committing real capital.
+
+### Live Mode
+
+Available on Basic plans and above. Live mode routes orders through your MT5 broker via EdgeBridge. When you open, modify, or close a trade in the web platform, the action is mirrored on your MT5 terminal in real time. This requires EdgeBridge to be running and connected — the connection status indicator in the top bar must show a green dot.
+
+> **Warning:** Live mode executes real trades with real money on your broker account. Always verify your position size, stop loss, and take profit levels before confirming a trade. tedge.ai is not responsible for trading losses.
+
+## Trading Features at a Glance
+
+| Feature | Demo | Live |
+|---------|------|------|
+| Open BUY/SELL positions | Yes | Yes |
+| Set SL and TP levels | Yes | Yes |
+| Partial close at TP1/TP2 | Yes | Yes |
+| Real-time P&L tracking | Yes | Yes |
+| Position overlay on chart | Yes | Yes |
+| Drag SL/TP on chart | Yes | Yes |
+| AI Coach review on close | Yes | Yes |
+| MFE / MAE tracking | Yes | Yes |
+| Trade history and statistics | Yes | Yes |
+
+## Where Trading Happens
+
+You interact with trading from three places in the platform:
+
+- **Charts page** — The Buy/Sell buttons in the top bar, plus the Trades tab in the sidebar for viewing and managing open positions.
+- **Trade execution dialog** — Opens when you click Execute on an AI opportunity or use the Buy/Sell buttons. This is where you set all trade parameters.
+- **Trades page** — A dedicated page with full trade history, statistics, calendar, and equity curve.
+
+## Keyboard Shortcuts
+
+| Shortcut | Action |
+|----------|--------|
+| `B` | Open Buy dialog for the current symbol |
+| `S` | Open Sell dialog for the current symbol |
+| `Esc` | Close the execution dialog without executing |
+
+## Risk Management
+
+tedge.ai encourages disciplined risk management through its execution dialog. Every trade requires a stop loss before it can be confirmed, and the risk percentage system ensures you always know the exact dollar amount at risk before entering. The AI Coach reinforces these habits by evaluating your risk management in every post-trade review.
+
+> **Tip:** Treat your demo account with the same discipline as a live account. The habits you build in demo mode will carry over to live trading.
+
+For step-by-step instructions, see [Opening a Trade](/docs/trading/open-trade) and [Managing Positions](/docs/trading/manage-positions).

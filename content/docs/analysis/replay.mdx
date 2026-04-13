@@ -1,0 +1,69 @@
+# Analysis Replay & Post-Mortem
+
+The Analyses page is where all your past analyses live. Rather than being a static list of old results, it provides a full replay experience — you can step through historical charts, see the zones the AI drew, watch how price interacted with those zones, and review the post-mortem scores that evaluate each setup's performance after the fact.
+
+
+## The Analyses Page
+
+Navigate to the **Analyses** page from the main navigation. The page displays a list of all your past analyses, sorted by date. Each entry shows the symbol, strategy used, date and time, and the post-mortem status (pending or completed).
+
+Click on any analysis to open the replay view, which reconstructs the chart as it looked at the time of the analysis with all zones, levels, and indicators overlaid.
+
+## Replay Controls
+
+The replay view includes a control bar at the bottom of the chart that lets you step through time and see how price evolved after the analysis was created.
+
+| Control | Function |
+|---------|----------|
+| **Play** | Advance the chart forward candle by candle at the selected speed |
+| **Pause** | Stop the replay at the current candle |
+| **Speed** | Adjust playback speed (1x, 2x, 5x, 10x) |
+| **Step forward** | Advance exactly one candle |
+| **Step backward** | Go back one candle |
+| **Jump to analysis time** | Reset the replay to the moment the analysis was created |
+
+
+## Setup Boxes on Replay
+
+During replay, the AI's original zones and opportunity setups are displayed on the chart as colored boxes and lines — exactly as they appeared when the analysis was first created. As you advance the replay, you can see candle by candle whether price entered the zones, respected the levels, or broke through them.
+
+Each setup box shows:
+- The original entry zone boundaries.
+- The stop loss and take profit levels (TP1 and TP2).
+- A colored status indicator that updates as the replay progresses: green if price reached the take profit, red if it hit the stop loss, and gray if the setup was never triggered.
+
+## Trade Markers
+
+If you executed a trade based on the analysis, the replay shows your actual trade entry and exit points as markers on the chart. This lets you visually compare your execution against the AI's proposed setup — did you enter at the right level? Did you exit too early or too late?
+
+
+## Post-Mortem Results (T+24h)
+
+Twenty-four hours after an analysis is created, the system automatically runs a post-mortem evaluation. This process scores each zone and setup based on what actually happened in the market:
+
+### Zone Scoring
+
+Each zone identified by the AI receives a performance score based on:
+
+- **Did price reach the zone?** — A zone that price never visited cannot be evaluated.
+- **How did price react?** — Strong rejections from a zone score higher than weak, indecisive reactions.
+- **Was the proposed direction correct?** — If the AI identified a demand zone and price bounced from it, the zone scores well. If price sliced through it, the score is lower.
+
+### Setup Outcome
+
+For each opportunity the AI proposed, the post-mortem evaluates:
+
+- Whether a trader following the setup would have been triggered (did price enter the entry zone?).
+- Whether the stop loss would have been hit.
+- Whether TP1 and/or TP2 would have been reached.
+- The resulting R:R if the trade played out.
+
+> **Tip:** Use the post-mortem results to evaluate which strategies and market conditions produce the best setups. Over time, patterns emerge — you might find that SMC analyses on BTC during trending markets score consistently higher than Range Trading analyses on sideways forex pairs.
+
+## Filtering and Searching
+
+The analyses list can be filtered by symbol, strategy, date range, and post-mortem score. This makes it easy to review specific periods or compare strategy performance across different instruments.
+
+## Learning from Replay
+
+The replay feature is designed as a learning tool. By stepping through historical analyses candle by candle, you develop an intuition for how the AI's zones interact with live price action. You start to recognize which zone types are most reliable, which setups tend to fail, and how your own execution compares to the ideal entry and exit timing.

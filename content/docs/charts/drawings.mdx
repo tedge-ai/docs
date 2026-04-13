@@ -1,35 +1,79 @@
 # Drawing Tools
 
-## Available Tools
+tedge.ai includes 15 drawing tools organized into three categories: Lines, Analysis, and Annotation. Access them from the pencil icon in the top bar, which opens a dropdown menu with all available tools.
 
-Access drawing tools from the pencil icon in the topbar.
 
-### Lines
+## Lines
+
+Line tools are the foundation of technical analysis — marking price levels, time events, and directional trends.
+
 | Tool | Description |
 |------|-------------|
-| **Horizontal Line** | Draw a horizontal level at a specific price |
-| **Vertical Line** | Mark a specific time on the chart |
-| **Trendline** | Connect two points to draw a trend line |
-| **Ray** | Draw a line from one point extending infinitely |
-| **Arrow** | Draw an arrow between two points |
+| **Horizontal Line (HLine)** | A horizontal level extending across the full chart at a specific price. One click to place. Use it for support, resistance, and key psychological levels. |
+| **Horizontal Ray (HRay)** | A horizontal line that extends in one direction from the placement point. Useful for marking levels that are only relevant from a certain point in time forward. |
+| **Vertical Line (VLine)** | A vertical line at a specific time. Use it to mark events, session opens, or news releases. |
+| **Trend Line** | A line connecting two points on the chart. Click the start point, then click the end point. The line is drawn between those two coordinates. |
+| **Extended Line** | Like a trend line, but extends infinitely in both directions beyond the two anchor points. Useful for projecting trendlines into the future and past. |
+| **Ray** | A line from one point extending infinitely in one direction. Click the origin, then click a second point to set the direction. |
+| **Arrow** | A directional arrow between two points. Useful for annotating expected price movements or marking entry/exit directions. |
 
-### Analysis
+## Analysis
+
+Analysis tools help you measure, zone, and visualize trade setups directly on the chart.
+
 | Tool | Description |
 |------|-------------|
-| **Fibonacci** | Fibonacci retracement levels between two points |
-| **Rectangle** | Draw a rectangular zone (support/resistance area) |
-| **Parallel Channel** | Draw a price channel with parallel lines |
-| **Long/Short Position** | Visualize a trade setup with entry, SL, TP |
+| **Fibonacci Retracement** | Draw between a swing high and swing low to display the standard Fibonacci retracement levels (23.6%, 38.2%, 50%, 61.8%, 78.6%). Click the start of the move, then click the end. |
+| **Fibonacci Extension** | Similar to retracement but projects levels beyond the move, useful for identifying take profit targets at 127.2%, 161.8%, and 261.8%. |
+| **Rectangle** | Draw a rectangular zone on the chart by clicking two opposite corners. Commonly used to highlight supply/demand zones, order blocks, or consolidation areas. |
+| **Channel** | Two parallel lines forming a price channel. Click three points: the first two define one boundary, and the third sets the width of the channel. |
+| **Price Range** | Measure the price distance and percentage change between two points. Click the start price, then the end price to see the range. |
+| **Position Long / Position Short** | Visualize a complete trade setup with entry, stop loss, and take profit levels. Supports multiple TPs (TP1/TP2) for partial close planning. Click to set entry, then drag to set SL and TP levels. |
+
+## Annotation
+
+Annotation tools let you add text and freehand markings to your chart.
+
+| Tool | Description |
+|------|-------------|
+| **Text** | Place a text label at any point on the chart. Click to position it, then type your note. |
+| **Brush** | Freehand drawing tool. Click and drag to draw directly on the chart. Useful for circling patterns or sketching ideas. |
 
 ## How to Draw
 
-1. Click the drawing tool icon in the topbar
-2. Select a tool from the dropdown
-3. Click on the chart to place the first point
-4. Click again for the second point (where applicable)
-5. The drawing appears and can be moved or deleted
+All drawing tools follow the same click-click placement pattern:
+
+1. Click the pencil icon in the top bar to open the drawing tools dropdown.
+2. Select a tool from the list. The cursor changes to a crosshair.
+3. Click on the chart to place the first anchor point.
+4. Click again to place the second anchor point (where applicable). For single-click tools like HLine and VLine, the drawing appears immediately after the first click.
+5. The drawing is placed. Click elsewhere on the chart or press `Esc` to deselect the tool.
+
+> **Tip:** After placing a drawing, the tool remains active so you can place another one immediately. Press `Esc` when you are done to return to pointer mode.
+
+
+## Right-Click Context Menu
+
+Right-click on any drawing to open the context menu with customization options:
+
+- **Color** — Choose a color for the line or fill.
+- **Width** — Set the line thickness (thin, medium, thick).
+- **Line style** — Solid, dashed, or dotted.
+- **Fill** — For rectangles and channels, toggle the fill and set its opacity.
+- **Coordinates** — View and edit the exact price and time coordinates. The time picker includes a calendar widget for precise placement.
+- **Delete** — Remove the drawing from the chart.
+
+
+## Position Tool: Multi-TP Support
+
+The Position Long and Position Short tools deserve special attention. When you place a position drawing, it shows your entry level, stop loss, and take profit with the risk-to-reward ratio displayed directly on the chart. You can configure multiple take profit levels (TP1 and TP2) to plan partial closes — the tool shows the R:R for each target separately.
 
 ## Deleting Drawings
 
-- Right-click on a drawing to access the context menu
-- Or use "Delete all" at the bottom of the drawing tools dropdown
+There are several ways to remove drawings:
+
+- **Right-click** any drawing and select "Delete" from the context menu.
+- **Delete All** — at the bottom of the drawing tools dropdown, click "Delete all drawings" to clear the chart.
+- **Per-drawing** — select a drawing and press the `Delete` or `Backspace` key.
+
+> **Warning:** "Delete all drawings" removes every drawing on the current chart, including AI-drawn zones. This action cannot be undone.

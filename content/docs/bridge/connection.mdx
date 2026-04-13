@@ -1,20 +1,51 @@
 # Connecting
 
+After installing EdgeBridge, the next step is to pair it with your tedge.ai account. This is a one-time setup — once paired, EdgeBridge connects automatically whenever it runs.
+
 ## Pairing Your Account
 
-1. Start EdgeBridge on your Windows machine
-2. On the tedge.ai platform, go to the **Bridge** page
-3. Enter the pairing code shown in EdgeBridge
-4. Click **Pair**
-5. The connection status turns green
+1. **Start EdgeBridge** on your Windows machine. The application appears as a system tray icon.
+2. **Open the Bridge page** on the tedge.ai platform in your browser.
+3. **Locate the pairing code** displayed in the EdgeBridge window or system tray tooltip.
+4. **Enter the code** in the pairing field on the Bridge page.
+5. **Click Pair** to establish the connection.
 
-## Connection Status
+The connection status indicator in the top bar turns green, confirming that live data is flowing from your MT5 terminal to the platform.
 
-Look for the connection indicator in the topbar:
-- **Green dot** — EdgeBridge connected, live data active
-- **Gold dot** — Twelve Data fallback (no bridge)
-- **Purple dot** — Demo mode
+
+
+## First Connection
+
+On the first successful connection, the platform imports your broker's symbol list. This may take a few seconds depending on how many symbols your broker offers. Once complete, all symbols become available in the symbol selector on the charts page.
+
+Your MT5 account information (balance, equity, open positions) is also synchronized. Any positions currently open in MT5 appear in the Trades panel on the platform.
+
+## Connection Status Indicator
+
+The top bar always shows the current data source:
+
+| Indicator | Status | Description |
+|-----------|--------|-------------|
+| **Green dot** | Connected | EdgeBridge is active, live data from your broker |
+| **Gold dot** | Fallback | No bridge detected, using Twelve Data market API |
+| **Purple dot** | Demo mode | Virtual trading mode active |
+
+When EdgeBridge is connected and you are in live mode, the green dot confirms that both data and trade execution are routed through your broker.
 
 ## Auto-Reconnect
 
-EdgeBridge automatically reconnects if the connection drops. No manual intervention needed.
+If the connection drops — due to a network interruption, MT5 restart, or machine sleep/wake — EdgeBridge automatically attempts to reconnect. Brief disconnections are normal and usually resolve within seconds. During a disconnection, the platform falls back to Twelve Data pricing until the bridge reconnects.
+
+You do not need to re-enter the pairing code after a disconnection. The pairing is persistent and survives restarts of EdgeBridge, MT5, and your machine.
+
+> **Tip:** If you close your laptop and reopen it later, EdgeBridge will reconnect automatically once the network is available. You can verify the connection by checking the status dot in the top bar.
+
+## Multiple MT5 Accounts
+
+EdgeBridge connects to the MT5 terminal that is currently running on your machine. If you switch MT5 accounts (by logging in to a different broker or account), EdgeBridge detects the change and updates the connection accordingly. The symbol list and account information refresh automatically.
+
+## Disconnecting
+
+To disconnect EdgeBridge, right-click the system tray icon and select **Disconnect**. The platform falls back to Twelve Data for pricing. To reconnect, select **Connect** from the same menu — no re-pairing is needed.
+
+> **Warning:** Disconnecting EdgeBridge while you have live positions open does not close those positions. They remain open on your MT5 account and will continue to be managed by your broker's server-side SL/TP orders. However, you will not be able to modify or close them from the tedge.ai platform until you reconnect.

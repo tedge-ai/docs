@@ -1,59 +1,70 @@
 # Strategies
 
-## Available Strategies
+tedge.ai offers six pre-built analysis strategies, each designed for a different market reading approach. The strategy you select determines how the AI agent interprets the chart — which patterns it looks for, which zones it draws, and how it constructs trade opportunities.
 
-| Strategy | Category | Description |
-|----------|----------|-------------|
-| **Smart Money Concepts** | Structure | Order blocks, FVG, liquidity sweeps, BOS/CHoCH |
-| **Supply & Demand** | Structure | Pure S&D zones, rally-base-drop, imbalances |
-| **Breakout Retest** | Structure | Key level breakouts, wait for retest to enter |
-| **Range Trading** | Mean Reversion | Trade range boundaries with BB and RSI confirmation |
-| **Trend Pullback** | Trend | Enter on pullbacks within an established trend |
-| **Key Levels** | Structure | Major S/R, psychological levels, pivots |
+## Strategy Overview
+
+| Strategy | Category | Best Market Conditions |
+|----------|----------|----------------------|
+| **Smart Money Concepts** | Structure | Trending and transitioning markets |
+| **Supply & Demand** | Structure | All conditions, especially clear impulse moves |
+| **Breakout Retest** | Momentum | Range breakouts, consolidation exits |
+| **Range Trading** | Mean Reversion | Sideways, range-bound markets |
+| **Trend Pullback** | Trend Following | Established trends with clear pullbacks |
+| **Key Levels** | Structure | All conditions, minimalist approach |
 
 ## Smart Money Concepts (SMC)
 
-The default strategy. The AI identifies:
-- **Order Blocks** — Last opposing candle before an impulsive move
-- **Fair Value Gaps** — Imbalances between 3 candles
-- **Break of Structure** — Swing high/low breakout confirming trend
-- **Liquidity pools** — Accumulated stops beyond obvious levels
+The default strategy and the most comprehensive. SMC is based on the theory that institutional traders leave footprints in market structure that can be identified and traded. The AI agent looks for four primary elements:
+
+**Order Blocks** — The last opposing candle before a strong impulsive move. These represent areas where institutional orders were placed and where price is likely to return. The agent identifies bullish order blocks (last bearish candle before a rally) and bearish order blocks (last bullish candle before a drop).
+
+**Fair Value Gaps (FVG)** — Imbalances between three consecutive candles where the wicks do not overlap, leaving a "gap" in the price auction. These gaps act as magnets for price and are often filled before the trend continues.
+
+**Break of Structure (BOS) and Change of Character (CHoCH)** — BOS confirms the current trend direction when price breaks a swing high (bullish) or swing low (bearish). CHoCH signals a potential trend reversal when price breaks structure in the opposite direction.
+
+**Liquidity Pools** — Clusters of stop losses sitting beyond obvious swing highs and lows. The agent identifies where liquidity is accumulated and anticipates that price may sweep these levels before reversing.
+
+> **Tip:** SMC works well on most instruments and timeframes. If you are unsure which strategy to use, start here.
 
 ## Supply & Demand
 
-Pure price action approach:
-- **Rally-Base-Rally / Drop-Base-Drop** — Continuation zones
-- **Rally-Base-Drop / Drop-Base-Rally** — Reversal zones
-- Fresh (untested) zones are prioritized
+A pure price-action approach focused on identifying zones where buying and selling pressure originated. The agent classifies zones into four types based on the surrounding price action:
+
+- **Rally-Base-Rally (RBR)** and **Drop-Base-Drop (DBD)** — Continuation zones where the trend paused briefly before resuming.
+- **Rally-Base-Drop (RBD)** and **Drop-Base-Rally (DBR)** — Reversal zones where the trend paused and then reversed direction.
+
+The agent prioritizes fresh (untested) zones over zones that have already been revisited. Fresh zones carry a higher probability of producing a reaction because the pending orders at those levels have not yet been absorbed.
 
 ## Breakout Retest
 
-Waits for a clean break of a key level, then enters on the retest:
-- Identifies the range and its boundaries
-- Confirms the breakout with momentum
-- Sets entry at the retested level
+This strategy is designed for range-bound markets preparing to break out. The agent identifies a clear price range and its boundaries, then waits for a convincing breakout with momentum before looking for a retest entry.
+
+The sequence the agent follows: identify the range, confirm the breakout (strong candle close beyond the boundary with increased momentum), and then set the entry at the retested level with a stop loss inside the range. This strategy tends to produce clean entries with well-defined invalidation levels.
 
 ## Range Trading
 
-Exploits range-bound markets:
-- Identifies upper and lower boundaries
-- Uses Bollinger Bands and RSI for confirmation
-- Buys at support + oversold, sells at resistance + overbought
+The opposite of Breakout Retest — this strategy exploits markets that are stuck in a range. The agent identifies the upper and lower boundaries and looks for reversal setups at each extreme.
+
+The agent uses Bollinger Bands to measure volatility compression and RSI to confirm overbought/oversold conditions at the range boundaries. Buy setups appear at the lower boundary when RSI is oversold, and sell setups appear at the upper boundary when RSI is overbought. This strategy works best when the range has been tested multiple times and shows no signs of breaking.
 
 ## Trend Pullback
 
-Follows the trend by entering on retracements:
-- Confirms trend with EMA alignment (20/50/200)
-- Enters on pullbacks to dynamic support (EMA levels)
-- Higher-timeframe trend must be clear
+A trend-following strategy that waits for the market to pull back to dynamic support before entering in the trend direction. The agent confirms the trend using EMA alignment — when the 20 EMA is above the 50 EMA, which is above the 200 EMA, the trend is bullish, and vice versa.
+
+Entries are placed at pullback levels where price touches or approaches a key EMA (typically the 21 or 50 EMA) within an established trend. The higher-timeframe trend must be clear and unambiguous for this strategy to produce setups.
 
 ## Key Levels
 
-Minimalist approach focused on the most important levels:
-- Psychological levels (round numbers)
-- Swing highs/lows tested multiple times
-- Daily/weekly highs and lows
+The most minimalist strategy. Rather than looking for complex patterns, the agent focuses entirely on identifying the most significant price levels on the chart:
+
+- **Psychological levels** — Round numbers that attract attention and orders (e.g., 2000.00, 1.1000).
+- **Swing highs and lows** — Levels tested multiple times that have proven to be significant support or resistance.
+- **Daily and weekly highs and lows** — Recent session extremes that act as magnets for price.
+
+This strategy draws fewer zones and produces fewer opportunities, but the levels it identifies tend to be the most universally respected ones on the chart.
 
 ## Custom Strategy (Premium)
 
-Write your own strategy prompt in the "Custom Strategy" option. Describe your rules and the AI will adapt its analysis accordingly.
+Premium subscribers can write their own strategy prompt in the "Custom Strategy" option. Describe your trading rules, preferred patterns, and entry criteria in plain language, and the AI agent adapts its analysis accordingly. This is useful for traders with proprietary setups that do not fit neatly into the six standard strategies.
+

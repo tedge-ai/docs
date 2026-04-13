@@ -1,0 +1,91 @@
+# Telegram Integration
+
+Connecting your Telegram account to tedge.ai gives you a reliable notification channel and a set of bot commands that let you check positions, view stats, and run analyses directly from the Telegram app.
+
+## Pairing Your Account
+
+The pairing process links your tedge.ai account to your Telegram user. It takes about 30 seconds:
+
+1. Go to the **Profile** page on the tedge.ai platform.
+2. Scroll to the **Integrations** section and click **Link Telegram**.
+3. A unique pairing link is generated. Click the link — it opens the @tedgeaibot conversation in Telegram.
+4. In Telegram, tap **Start** or send the `/start` command to the bot.
+5. The bot confirms the pairing with a welcome message.
+6. Back on the platform, the integrations section updates to show your Telegram username and a "Linked" status.
+
+
+
+> **Tip:** The pairing link is unique to your account and expires after 10 minutes. If it expires, generate a new one by clicking "Link Telegram" again.
+
+## What You Receive
+
+Once paired, Telegram becomes an active notification channel. You receive messages for:
+
+- **Price alert triggers** — Symbol, current price, and the condition that was met.
+- **Trade closures** — A summary of the closed trade including entry/exit prices, P&L, duration, and the AI Coach score.
+- **Scheduled analysis results** — A summary of opportunities found by the scheduler, with a link to view the full analysis on the platform.
+
+Notifications are sent instantly and appear as regular Telegram messages from @tedgeaibot. They work on all your Telegram devices (phone, desktop, web).
+
+## Bot Commands
+
+The @tedgeaibot responds to several commands, giving you quick access to your trading data without opening the web platform:
+
+### /positions
+
+Lists your currently open positions (demo or live, depending on your active mode). Each position shows the symbol, direction, entry price, current P&L, and SL/TP levels.
+
+```
+/positions
+```
+
+Example response:
+```
+Open positions (Demo):
+1. BTC/USD LONG 0.1 lot @ 67,250
+   P&L: +$145.30 | SL: 66,500 | TP: 68,000
+2. EUR/USD SHORT 0.5 lot @ 1.0845
+   P&L: -$23.00 | SL: 1.0880 | TP: 1.0780
+```
+
+### /stats
+
+Displays your trading statistics for the current month, including win rate, total P&L, average P&L per trade, total number of trades, and average AI Coach score.
+
+```
+/stats
+```
+
+### /analyse
+
+Runs an AI analysis on a specified symbol and sends the results as a Telegram message. The command uses your default strategy (SMC unless changed in preferences).
+
+```
+/analyse BTCUSD
+```
+
+The analysis runs in the background and you receive the results within a minute, including the identified bias, key zones, and any trade opportunities. For the full chart experience with visual zones and replay, open the platform.
+
+> **Warning:** The `/analyse` command consumes AI credits from your monthly allocation (approximately 0.30–0.70 credits), just like running an analysis on the platform.
+
+## Managing the Connection
+
+### Checking Status
+
+On the Profile page, the integrations section shows whether Telegram is linked and displays your Telegram username. The bot also responds to basic commands — send `/status` to confirm the connection is active.
+
+### Muting Notifications
+
+If you want to temporarily stop receiving Telegram notifications without unlinking, you can mute the @tedgeaibot conversation in Telegram using Telegram's built-in mute feature. This does not affect the connection — you can unmute at any time to resume notifications.
+
+### Unlinking
+
+To disconnect your Telegram account from tedge.ai:
+
+1. Go to the **Profile** page on the platform.
+2. In the integrations section, click **Unlink Telegram**.
+3. Confirm the action.
+
+Notifications stop immediately and bot commands no longer work. Your Telegram conversation history with the bot is preserved on Telegram's side. You can re-link at any time by going through the pairing process again.
+
+> **Tip:** If you switch Telegram accounts, you need to unlink the old account first and then re-pair with the new one. Each tedge.ai account can be linked to one Telegram account at a time.

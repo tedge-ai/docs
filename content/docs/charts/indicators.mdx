@@ -1,38 +1,54 @@
 # Indicators
 
-## Overview
+tedge.ai provides a focused set of technical indicators that overlay directly on the chart or appear in sub-panes below it. Access the indicator settings from the indicators icon in the top bar, which opens a dropdown panel for toggling, configuring, and adding indicators.
 
-Access indicators from the settings icon in the topbar.
 
 ## Available Indicators
 
-### Overlay (on chart)
-| Indicator | Parameters |
-|-----------|-----------|
-| **EMA** (Exponential Moving Average) | Period (2-500), color, line width |
-| **SMA** (Simple Moving Average) | Period (2-500), color, line width |
-| **Bollinger Bands** | Period, color |
+### Overlay Indicators (on chart)
 
-### Oscillators (sub-pane)
-| Indicator | Parameters |
-|-----------|-----------|
-| **RSI** (Relative Strength Index) | Period, color, pane height |
-| **ADX** (Average Directional Index) | Period, color, pane height |
+These indicators draw directly on the price chart alongside your candles and drawings.
+
+**EMA (Exponential Moving Average)** — A smoothed average that gives more weight to recent prices, making it responsive to current market conditions. You can configure the period from 2 to 500 candles, and set custom colors and line widths for each instance. Common configurations include EMA 9 for short-term momentum, EMA 21 for trend direction, EMA 50 for intermediate support/resistance, and EMA 200 for the long-term trend.
+
+**Bollinger Bands** — A volatility envelope that plots an upper and lower band around a moving average. Configure the period (typically 20) and the standard deviation multiplier (typically 2.0). When price reaches the outer bands, it signals potential overextension; when the bands squeeze together, it suggests a volatility breakout is approaching.
+
+**Market Structure** — An overlay that automatically marks swing highs, swing lows, and structural shifts (Break of Structure and Change of Character) on the chart. This is particularly useful when analyzing with the Smart Money Concepts strategy.
+
+### Adding Multiple Instances
+
+You can add multiple EMA or Bollinger Band instances to the same chart, each with different periods and colors. This is common for building "EMA stacks" — for example, EMA 9 (fast), EMA 21 (medium), and EMA 50 (slow) to visualize trend alignment at a glance.
+
+> **Tip:** The number of indicators you can have active per chart depends on your subscription tier: Free allows 2, Basic allows 5, Advanced allows 15, and Premium is unlimited.
 
 ## AI-Configured Indicators
 
-When you run an AI analysis, the agent automatically recommends indicators adapted to the symbol and grouped by timeframe range:
+When you run an AI analysis, the agent calls the `set_indicators` tool to configure indicators tailored to the specific symbol being analyzed. The agent groups its recommendations by timeframe range:
 
-- **LTF** (M1-M15) — Typically faster EMAs (9, 21)
-- **MTF** (M30-H1) — Medium EMAs (21, 50)
-- **HTF** (H4+) — Slower EMAs (50, 200)
+| Range | Timeframes | Typical Configuration |
+|-------|------------|----------------------|
+| **LTF** | M1 – M15 | Fast EMAs (9, 21) for scalp/intraday entries |
+| **MTF** | M30 – H1 | Medium EMAs (21, 50) for swing setups |
+| **HTF** | H4+ | Slow EMAs (50, 200) for trend context |
 
-When you switch timeframes, indicators automatically adjust to match the agent's recommendations.
+### Automatic Switching
+
+When you switch timeframes on the chart, the indicators automatically update to match the AI's recommendations for that timeframe range. Switch from H1 to M5 and your EMA 50 might become an EMA 9 — this happens seamlessly, no manual adjustment needed.
+
+Each AI-configured indicator includes a reason explaining why the agent chose that particular setup, visible in the analysis summary panel.
 
 ## Manual Configuration
 
-Click the indicators icon in the topbar to:
-- Toggle indicators on/off (checkbox)
-- Adjust period, color, and line width
-- Add new EMA/SMA
-- Reset to defaults
+Click the indicators icon in the top bar to open the configuration panel, where you can:
+
+- **Toggle indicators on/off** using the checkbox next to each one.
+- **Adjust parameters** — click the settings icon on any indicator to change its period, color, and line width.
+- **Add new indicators** — click "Add indicator" to create a new EMA or Bollinger Band instance.
+- **Reset to defaults** — remove all custom configuration and return to the AI-recommended setup (if an analysis has been run).
+
+
+## Best Practices
+
+For most trading styles, a simple setup works best. Avoid overcrowding the chart with too many indicators — two or three EMAs plus Bollinger Bands when needed provides plenty of information. Let the AI configure the optimal periods for each symbol, and focus your attention on price action and the zones identified in analysis.
+
+> **Warning:** Manually changing indicators does not affect past or future AI analyses. The agent always configures indicators based on its own assessment of the symbol, regardless of your manual settings.

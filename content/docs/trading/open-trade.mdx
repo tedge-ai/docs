@@ -1,25 +1,55 @@
 # Opening a Trade
 
+There are two ways to open a trade in tedge.ai: directly from the chart using the Buy/Sell buttons, or from an AI analysis opportunity with pre-filled parameters. Both methods open the same execution dialog where you review and confirm the trade details.
+
 ## From the Chart
 
-1. Click the **BUY** or **SELL** button in the topbar
-2. Set the lot size, SL, and TP in the trade dialog
-3. Confirm the trade
+Click the **BUY** or **SELL** button in the top bar to open the trade execution dialog. The dialog is pre-filled with the current symbol and direction. You then set the position size, stop loss, and take profit levels manually.
 
-## From an Opportunity
+## From an AI Opportunity
 
-When an AI analysis produces opportunities:
-1. Open the **Analyse** panel
-2. Find the opportunity card
-3. Click **Execute** to open the trade with pre-filled parameters
-4. Adjust if needed and confirm
+When an AI analysis produces trade opportunities, each opportunity card includes an **Execute** button. Clicking it opens the execution dialog with all parameters pre-filled from the AI's recommendation — direction, entry zone, stop loss, TP1, and TP2. You can adjust any of these values before confirming.
 
-## Parameters
+This is the recommended workflow: let the AI identify the setup, review its reasoning, and then execute with a single click if you agree with the analysis.
 
-| Parameter | Description |
-|-----------|-------------|
-| **Direction** | BUY (LONG) or SELL (SHORT) |
-| **Lots** | Position size (AI recommends based on your risk settings) |
-| **SL** | Stop Loss price level |
-| **TP1** | First take profit target |
-| **TP2** | Second take profit target (optional) |
+
+## The Execution Dialog
+
+The execution dialog displays the following parameters:
+
+### Direction
+
+BUY (LONG) or SELL (SHORT). When opened from an opportunity, this is set by the AI. When opened from the top bar buttons, it matches the button you clicked.
+
+### Risk Percentage
+
+Set the percentage of your account balance you want to risk on this trade. The platform uses this, combined with the distance from entry to stop loss, to calculate the appropriate lot size automatically. Your default risk percentage comes from your onboarding profile but can be overridden on every trade.
+
+### Stop Loss (SL)
+
+The price level at which the trade will be closed to limit your loss. When executing from an AI opportunity, the SL is placed at the level the agent determined as the setup's invalidation point. You can adjust it by typing a new value or dragging the SL line on the chart.
+
+### Take Profit (TP1 and TP2)
+
+The price levels at which you want to take profits. TP1 is the primary target, and TP2 is an optional extended target for partial close strategies. When both TPs are set, the platform can automatically close a portion of your position at TP1 and let the rest run to TP2.
+
+### Contract Size / Lots
+
+The calculated position size based on your risk percentage and SL distance. The dialog shows the lot size and the dollar amount at risk. You can override this manually if you prefer a specific size.
+
+> **Tip:** The risk-based sizing is one of the most valuable features of the execution dialog. Rather than guessing lot sizes, define how much you are willing to lose, and the platform calculates the correct size to match that risk for the specific SL distance.
+
+## Order Types
+
+Trades in tedge.ai execute as market orders at the current price. The entry zone from the AI analysis serves as a guidance area — when price is within or near the zone, it is the suggested time to execute.
+
+## Confirming the Trade
+
+Review all parameters in the dialog, then click **Confirm** to execute the trade. The position appears immediately in the Trades panel and as an overlay on the chart showing your entry level, SL, and TP lines.
+
+
+## Post-Execution
+
+Once the trade is open, it is tracked in real time with live P&L updates. The position overlay on the chart shows your entry, current price, SL, and TP levels. See [Managing Positions](/docs/trading/manage-positions) for details on modifying and closing trades.
+
+> **Warning:** In live mode, the trade is executed on your MT5 broker account in real time. Make sure EdgeBridge is connected (green dot in the top bar) before executing live trades.
