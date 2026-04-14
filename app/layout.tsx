@@ -39,7 +39,7 @@ export default async function RootLayout({
       suppressHydrationWarning
     >
       <Head>
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/icon.svg" type="image/svg+xml" />
       </Head>
       <body>
         <Layout
